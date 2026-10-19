@@ -1,0 +1,1061 @@
+/* Leaderboard New Design - Tailwind-inspired CSS */
+
+/* Fix modal z-index to appear above header */
+#jp_googlesheet_api-modal.uk-modal {
+    z-index: 99999 !important;
+}
+
+/* Fix modal vertical center */
+#jp_googlesheet_api-modal .uk-modal-dialog {
+    margin: auto !important;
+}
+
+/* Fix modal content alignment - left align values */
+.jp_ggs_modal_content_thongtin table td:nth-child(2) {
+    text-align: left !important;
+}
+
+/* Fix danh hieu badges in modal - match leaderboard style */
+#jp_googlesheet_api-modal [data-target="__danh_hieu"],
+#jp_googlesheet_api-modal .jpga-danh-hieu {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 0.375rem !important;
+    border: 1px solid !important;
+    white-space: nowrap !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-yellow {
+    border-color: #fcd34d !important;
+    background: #C68B38 !important;
+    color: #451a03 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-yellow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    animation: vip-shine 5s infinite;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-red {
+    border-color: #fca5a5 !important;
+    background: #f87171 !important;
+    color: #991b1b !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-blue {
+    border-color: #93c5fd !important;
+    background: #60a5fa !important;
+    color: #1e3a8a !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-gray {
+    border-color: #d1d5db !important;
+    background: #94a3b8 !important;
+    color: #334155 !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-orange {
+    border-color: #fdba74 !important;
+    background: #fb923c !important;
+    color: #7c2d12 !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-green {
+    border-color: #86efac !important;
+    background: #4ade80 !important;
+    color: #14532d !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-pink {
+    border-color: #f9a8d4 !important;
+    background: #f472b6 !important;
+    color: #9d174d !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-cyan {
+    border-color: #67e8f9 !important;
+    background: #22d3ee !important;
+    color: #164e63 !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-purple {
+    border-color: #d8b4fe !important;
+    background: #c084fc !important;
+    color: #581c87 !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-white {
+    border-color: #e5e7eb !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-cyan-light {
+    border-color: #cffafe !important;
+    background: #a5f3fc !important;
+    color: #164e63 !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge.badge-pink-light {
+    border-color: #fce7f3 !important;
+    background: #fbcfe8 !important;
+    color: #9f1239 !important;
+}
+
+#jp_googlesheet_api-modal .jp-badge svg {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+#jp_googlesheet_api-modal .jp-crown-icon {
+    font-size: 12px !important;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.jp-leaderboard-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Premium Gold Gradient */
+.bg-premium-gold {
+    background: linear-gradient(135deg, #C84B31, #A83820);
+}
+
+/* Scrollbar Hiding */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Tabs */
+.jp-tab-button {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    padding: 0.75rem 1.25rem;
+    transform: skewX(-12deg);
+    transition: all 0.2s;
+    border-right: 2px solid white;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.jp-tab-button:last-child {
+    border-right: 0;
+}
+
+.jp-tab-button.active {
+    background: #141B23;
+    z-index: 10;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.jp-tab-button:not(.active) {
+    background: transparent;
+}
+
+.jp-tab-button:not(.active):hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.jp-tab-button span {
+    display: block;
+    transform: skewX(12deg);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.jp-tab-button.active span {
+    color: #E06344;
+}
+
+.jp-tab-button:not(.active) span {
+    color: rgb(100, 116, 139);
+}
+
+.jp-tab-button:not(.active):hover span {
+    color: rgb(30, 41, 59);
+}
+
+.jp-tab-button:focus-visible {
+    outline: 3px solid #E06344;
+    outline-offset: 2px;
+}
+
+/* Badge Styles - Match badges.html */
+.jp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.375rem;
+    border: 1px solid;
+    white-space: nowrap;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Crown icon sizing - match SVG icons */
+.jp-crown-icon {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    width: 12px;
+    height: 12px;
+}
+
+.jp-badge.badge-yellow {
+    border-color: #fcd34d;
+    background: #C68B38;
+    color: #451a03;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+    position: relative;
+    overflow: hidden; /* cắt lớp shine ::after, không để vệt sáng lòi ra ngoài badge */
+}
+
+/* VIP shine animation - left to right every 10s */
+.jp-badge.badge-yellow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    animation: vip-shine 5s infinite;
+}
+
+@keyframes vip-shine {
+    0%, 90% {
+        left: -100%;
+    }
+    95% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.jp-badge.badge-red {
+    border-color: #fca5a5;
+    background: #f87171;
+    color: #991b1b;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+}
+
+.jp-badge.badge-blue {
+    border-color: #93c5fd;
+    background: #60a5fa;
+    color: #1e3a8a;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.jp-badge.badge-gray {
+    border-color: #d1d5db;
+    background: #94a3b8;
+    color: #334155;
+    box-shadow: 0 2px 8px rgba(148, 163, 184, 0.1);
+}
+
+.jp-badge.badge-orange {
+    border-color: #fdba74;
+    background: #fb923c;
+    color: #7c2d12;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
+}
+
+.jp-badge.badge-green {
+    border-color: #86efac;
+    background: #4ade80;
+    color: #14532d;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.2);
+}
+
+.jp-badge.badge-pink {
+    border-color: #f9a8d4;
+    background: #f472b6;
+    color: #9d174d;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.2);
+}
+
+.jp-badge.badge-cyan {
+    border-color: #67e8f9;
+    background: #22d3ee;
+    color: #164e63;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.2);
+}
+
+.jp-badge.badge-purple {
+    border-color: #d8b4fe;
+    background: #c084fc;
+    color: #581c87;
+    box-shadow: 0 2px 8px rgba(168, 85, 247, 0.2);
+}
+
+.jp-badge.badge-white {
+    border-color: #e5e7eb;
+    background: #ffffff;
+    color: #1f2937;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jp-badge.badge-cyan-light {
+    border-color: #cffafe;
+    background: #a5f3fc;
+    color: #164e63;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.15);
+}
+
+.jp-badge.badge-pink-light {
+    border-color: #fce7f3;
+    background: #fbcfe8;
+    color: #9f1239;
+    box-shadow: 0 2px 8px rgba(244, 114, 182, 0.15);
+}
+
+.jp-badge {
+    position: relative;
+}
+
+.jp-badge:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+/* Custom tooltip - chỉ áp dụng cho badges trong leaderboard (không áp dụng trong modal) */
+.jp-leaderboard-row .jp-badge[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease 0s, visibility 0s linear 0s;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip arrow */
+.jp-leaderboard-row .jp-badge[data-tooltip-arrow="true"]::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 3px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease 0s, visibility 0s linear 0s;
+    z-index: 1000;
+}
+
+/* Show tooltip after 0.3s hover */
+.jp-leaderboard-row .jp-badge[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+.jp-leaderboard-row .jp-badge[data-tooltip-arrow="true"]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+/* Mobile: Show tooltip when badge has 'badge-active' class (tap to show) */
+.jp-leaderboard-row .jp-badge[data-tooltip].badge-active::before {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.jp-leaderboard-row .jp-badge[data-tooltip-arrow="true"].badge-active::after {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/* Stars */
+.jp-stars {
+    display: flex;
+    gap: 1px;
+    margin-bottom: 0.125rem;
+}
+
+.jp-star {
+    width: 10px;
+    height: 10px;
+    fill: #E06344;
+    color: #E06344;
+}
+
+/* Leaderboard Row */
+.jp-leaderboard-row {
+    display: grid;
+    grid-template-columns: 30px 1fr auto;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    min-height: 50px;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+/* Ô Mark (gộp Mark+Race) — mobile căn PHẢI, desktop căn trái */
+.jp-mark-cell { text-align: right; }
+.jp-tri-splits > div { justify-content: flex-end; }
+
+/* Modal Team: nhiều CLB xếp dọc, không tràn/méo modal */
+#jp_googlesheet_api-modal [data-target="__team"] {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.35;
+    max-height: 4.5em;
+    overflow-y: auto;
+}
+#jp_googlesheet_api-modal [data-target="__team"] > div:not(:first-child) {
+    font-size: 0.85em;
+    color: #64748b;
+}
+
+/* Modal: list TOP3 / đạt chuẩn — dạng dòng dọc (như THÀNH TÍCH NỔI BẬT) */
+#jp_googlesheet_api-modal .jp-ach-list {
+    max-height: 160px; overflow-y: auto;
+    overflow-wrap: anywhere; word-break: break-word;
+}
+/* TOP3 item: pill hạng + tên giải + ngày */
+#jp_googlesheet_api-modal .jp-t3,
+#jp_googlesheet_api-modal .jp-other {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; line-height: 1.35; padding: 1px 0;
+}
+#jp_googlesheet_api-modal .jp-t3-rank {
+    flex-shrink: 0; min-width: 40px; text-align: center;
+    font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 5px;
+    background: #e2e8f0; color: #475569;
+}
+#jp_googlesheet_api-modal .jp-t3-1 { background: #fde68a; color: #92400e; }  /* vàng */
+#jp_googlesheet_api-modal .jp-t3-2 { background: #e5e7eb; color: #4b5563; }  /* bạc */
+#jp_googlesheet_api-modal .jp-t3-3 { background: #fed7aa; color: #9a3412; }  /* đồng */
+#jp_googlesheet_api-modal .jp-t3-txt { flex: 1; min-width: 0; color: #334155; }
+#jp_googlesheet_api-modal .jp-t3-date { flex-shrink: 0; color: #94a3b8; font-size: 11px; }
+#jp_googlesheet_api-modal .jp-other { align-items: baseline; }
+#jp_googlesheet_api-modal .jp-other b { flex-shrink: 0; color: #0f172a; font-family: monospace; }
+#jp_googlesheet_api-modal .jp-other-rank {
+    flex-shrink: 0; min-width: 42px; text-align: center;
+    font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 5px;
+    background: #e2e8f0; color: #475569; font-family: monospace;
+}
+#jp_googlesheet_api-modal .jp-other-race { flex: 1; min-width: 0; color: #64748b; font-size: 11px; }
+/* PR: chỉ badge "PR" nhỏ, thời gian in đậm màu cam — không nền, không viền */
+#jp_googlesheet_api-modal .jp-other--pr .jp-other-time { color: #b45309; }
+#jp_googlesheet_api-modal .jp-other-pr-badge {
+    flex-shrink: 0; font-size: 9px; font-weight: 800; letter-spacing: .04em;
+    padding: 1px 5px; border-radius: 4px; background: #f59e0b; color: #fff;
+}
+
+/* Mobile avatar size (+10%) */
+.jp-leaderboard-row .jp-avatar-mobile {
+    width: 44px !important;
+    height: 44px !important;
+}
+
+/* Name with Facebook link - underline on hover */
+.jp-leaderboard-row h3 a.jp-fb-link:hover {
+    text-decoration: underline !important;
+}
+
+/* Hover effect */
+.jp-leaderboard-row:hover {
+    background-color: #FBF7F4;
+}
+
+.jp-leaderboard-row:active {
+    background-color: #F6EDE6;
+}
+
+/* Club styling - multiple clubs */
+.jp-club-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    overflow: hidden;
+    padding-right: 0.5rem;
+}
+
+/* First club - default styling */
+.jp-club-container > *:first-child,
+.jp-club-container > *:first-child a {
+    color: rgb(51, 65, 85);
+    font-size: 13px;
+}
+
+/* Second, third, etc. clubs - lighter and smaller */
+.jp-club-container > *:not(:first-child),
+.jp-club-container > *:not(:first-child) a {
+    color: rgb(148, 163, 184);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+/* Link CLB: kế thừa màu trên, bỏ gạch chân mặc định, hover mới gạch chân */
+.jp-club-container a.jp-club-link { text-decoration: none; cursor: pointer; }
+.jp-club-container a.jp-club-link:hover { text-decoration: underline; }
+
+@media (min-width: 768px) {
+    .jp-leaderboard-wrapper {
+        padding: 2.5rem 1rem;
+    }
+
+    .jp-tab-button {
+        flex-grow: 0;
+    }
+
+    .jp-badge {
+        gap: 0.25rem;
+        font-size: 0.625rem;
+    }
+
+    .jp-star {
+        width: 12px;
+        height: 12px;
+    }
+
+    .jp-leaderboard-row {
+        grid-template-columns: 55px 1fr 100px 125px 110px 100px 90px minmax(140px, 200px);
+        padding: 0.625rem 0.75rem;
+    }
+
+    /* ULTRA: cột Pace luôn rỗng (đo 100/100 dòng) nên đổi thành KM, và KM đứng
+       TRƯỚC Mark — biết cự ly rồi mới đọc giờ thì con số mới có nghĩa.
+       Vẫn 8 cột, chỉ đổi thứ tự và bề rộng. */
+    /* 08/10/2026: thêm KM QUY ĐỔI + ĐIỂM sau KM — bảng ultra xếp theo nhóm rồi
+       điểm, nên phải bày điểm ra. 10 cột: #, VĐV, KM, KQĐ, ĐIỂM, Mark, Race, Day,
+       Sex, Club. */
+    .jp-leaderboard-row.jp-ultra,
+    #jp-table-header.jp-ultra {
+        grid-template-columns: 50px 1fr 86px 78px 64px 92px 112px 96px 84px minmax(130px, 190px);
+    }
+    #jp-table-header .jp-cot-2d { line-height: 1.15; }
+
+    /* Desktop: ô Mark về căn trái như cũ, splits căn trái */
+    .jp-mark-cell { text-align: left; }
+    .jp-tri-splits > div { justify-content: flex-start; }
+
+    /* Desktop avatar (47px) */
+    .jp-leaderboard-row .jp-avatar-img,
+    .jp-leaderboard-row .jp-avatar-wrapper .jp-avatar-img {
+        width: 47px !important;
+        height: 47px !important;
+        min-width: 47px !important;
+        min-height: 47px !important;
+    }
+
+    .jp-leaderboard-row .jp-competitor-cell {
+        gap: 0.875rem !important;
+    }
+
+    .jp-leaderboard-row h3 {
+        font-size: 15px !important;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 767px) {
+    .jp-leaderboard-wrapper {
+        padding: 1rem 0.5rem;
+    }
+
+    .jp-tab-button {
+        flex-grow: 1;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .jp-tab-button span {
+        font-size: 0.75rem;
+    }
+
+    /* Mobile row name */
+    .jp-leaderboard-row h3 {
+        font-size: 13px !important;
+    }
+
+    /* Mobile: gộp ô Mark + Race — thời gian to hơn ở trên, tên giải nhỏ ở dưới */
+    .jp-leaderboard-row .jp-mark-time {
+        font-size: 16px !important;
+        line-height: 1.2;
+    }
+    .jp-leaderboard-row .jp-mark-race {
+        font-size: 10px !important;
+    }
+
+    /* Mobile badges smaller */
+    .jp-leaderboard-row .jp-badge {
+        padding: 0.1rem 0.25rem !important;
+        font-size: 7px !important;
+    }
+
+    .jp-leaderboard-row .jp-badge svg {
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    /* Mobile crown icons - match SVG size */
+    .jp-leaderboard-row .jp-crown-icon {
+        font-size: 8px !important;
+        width: 8px !important;
+        height: 8px !important;
+    }
+}
+
+/* ==========================================================================
+   LIVE STRIP — băng chữ hoạt động gần đây (đơn giải chạy online + cửa hàng)
+   ========================================================================== */
+
+.jp-live-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid rgb(253, 230, 138);
+    border-radius: 12px;
+    padding: 7px 8px 7px 10px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, .06);
+}
+
+/* Nhãn LIVE */
+.jp-live-badge {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(135deg, #C84B31, #A83820);
+    color: #1f2937;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    line-height: 1;
+    padding: 5px 9px;
+    border-radius: 999px;
+}
+
+.jp-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #dc2626;
+    animation: jpLivePulse 1.6s ease-in-out infinite;
+}
+
+@keyframes jpLivePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: .35; transform: scale(.75); }
+}
+
+.jp-live-wave {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    color: rgb(217, 119, 6);
+}
+
+/* Khung cắt + dải chữ trôi */
+.jp-live-viewport {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+            mask-image: linear-gradient(to right, transparent, #000 18px, #000 calc(100% - 18px), transparent);
+}
+
+.jp-live-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: jpLiveScroll var(--jp-live-duration, 60s) linear infinite;
+}
+
+/* Rê chuột / chạm vào thì dừng để còn đọc và bấm */
+.jp-live-bar:hover .jp-live-track,
+.jp-live-track:focus-within {
+    animation-play-state: paused;
+}
+
+@keyframes jpLiveScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* Một mục trong băng chữ */
+.jp-live-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    font-size: 12.5px;
+    color: rgb(51, 65, 85);
+    text-decoration: none;
+    padding: 0 2px;
+}
+
+.jp-live-item:hover .jp-live-title { text-decoration: underline; }
+
+.jp-live-name  { font-weight: 700; color: rgb(15, 23, 42); }
+.jp-live-title { font-weight: 600; color: rgb(146, 64, 14); }
+.jp-live-ago   { color: rgb(100, 116, 139); }
+
+.jp-live-sep {
+    flex: none;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgb(251, 191, 36);
+    margin: 0 12px;
+}
+
+/* Nút Xem tất cả */
+.jp-live-all {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: #fff;
+    border: 1px solid rgb(226, 232, 240);
+    border-radius: 8px;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(71, 85, 105);
+    text-decoration: none;
+    transition: border-color .2s, color .2s;
+}
+
+.jp-live-all:hover {
+    border-color: #E06344;
+    color: rgb(146, 64, 14);
+}
+
+.jp-live-all svg { width: 13px; height: 13px; }
+
+/* ─── Điện thoại: bỏ icon sóng, nút chỉ còn mũi tên, chữ nhỏ lại ─── */
+@media (max-width: 767px) {
+    .jp-live-bar     { gap: 7px; padding: 6px 6px 6px 8px; border-radius: 10px; }
+    .jp-live-wave    { display: none; }
+    .jp-live-badge   { font-size: 10px; padding: 4px 7px; }
+    .jp-live-item    { font-size: 11.5px; }
+    .jp-live-sep     { margin: 0 9px; }
+    .jp-live-all     { padding: 5px 6px; }
+    .jp-live-all-text{ display: none; }
+}
+
+/* Người dùng tắt hiệu ứng chuyển động → không tự trôi, cho vuốt tay thay thế */
+@media (prefers-reduced-motion: reduce) {
+    .jp-live-track { animation: none; }
+    .jp-live-viewport {
+        overflow-x: auto;
+        -webkit-mask-image: none;
+                mask-image: none;
+    }
+    .jp-live-viewport::-webkit-scrollbar { display: none; }
+}
+
+/* ── "Chờ xác minh" — thành tích còn trong hạn hiển thị tạm ────────────────
+ *
+ * Chỉ hiện với VĐV chưa xác minh; người đã xác minh không có phần tử nào trong
+ * trang (JS trả chuỗi rỗng, không phải ẩn bằng CSS).
+ *
+ * ── Vì sao KHÔNG dùng hộp cảnh báo hổ phách
+ *
+ * Bảng Vàng là bảng công khai — ai cũng đọc được, không riêng chủ nhân thành
+ * tích. Một hộp cảnh báo màu báo động kèm chữ "CHƯA XÁC MINH" viết hoa là bêu
+ * người ta giữa danh sách. Đây không phải lỗi của họ, chỉ là một bước còn thiếu.
+ *
+ * Nên chip trong bảng đi theo đúng bảng màu xám-lam mà dòng đang dùng sẵn
+ * (viền #e2e8f0, chữ #64748b) và mượn kích thước của .jp-badge. Chỉ mỗi đồng hồ
+ * lấy màu hổ phách — thứ duy nhất thật sự gấp.
+ */
+.jp-cxm-dh {
+    font-variant-numeric: tabular-nums;   /* số không nhảy chỗ mỗi giây */
+    font-weight: 700;
+    color: #b45309;
+    white-space: nowrap;
+}
+.jp-cxm-het { color: #b91c1c; }
+
+.jp-cxm-nut {
+    display: inline-flex;
+    align-items: center;
+    background: #b45309;
+    color: #fff !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: background .15s;
+}
+.jp-cxm-nut:hover { background: #92400e; }
+
+/* ── Chip trong bảng ── mượn số đo của .jp-badge để đứng cùng hàng huy hiệu */
+.jp-cxm--bang {
+    display: inline-flex;
+    /* Ô tên là flex cột, nên con của nó bị kéo giãn hết chiều ngang — nền chạy
+       dài quá phần chữ. align-self mới là thứ bắt nó co lại vừa nội dung. */
+    align-self: flex-start;
+    max-width: 100%;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+    padding: 0.125rem 0.375rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 0.625rem;
+    line-height: 1.6;
+}
+.jp-cxm--bang .jp-cxm-nut {
+    margin-left: 0.125rem;
+    padding: 0.0625rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.625rem;
+}
+
+/* ── Khối trong hộp chi tiết ──
+ *
+ * Thẻ hồ sơ là nền vàng hoạ tiết, chữ #2d2d2d, mọi thứ căn giữa. Khối này dùng
+ * lại đúng bộ đó: nền trắng mờ để hoạ tiết vàng vẫn ánh qua, chữ cùng màu thẻ,
+ * căn giữa như các khối bên trên. Nền đục màu khác là dán một mảnh giao diện lạ
+ * lên giữa tấm thẻ.
+ */
+.jp-cxm--hop {
+    margin: 14px auto 0;
+    padding: 12px 16px;
+    max-width: 420px;
+    border: 1px solid rgba(180, 83, 9, .28);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .62);
+    color: #2d2d2d;
+    text-align: center;
+}
+.jp-cxm-dau {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #6b6b6b;
+}
+.jp-cxm-dhto {
+    margin-top: 3px;
+    font-size: 17px;
+    line-height: 1.3;
+}
+.jp-cxm-dhto .jp-cxm-dh { font-size: 17px; }
+.jp-cxm-chu {
+    margin: 8px 0 0;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+.jp-cxm-chu b { color: #2d2d2d; }
+.jp-cxm-ngay { opacity: .7; white-space: nowrap; }
+.jp-cxm-nut--to {
+    margin-top: 11px;
+    padding: 7px 18px;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+/* ── Điện thoại ──
+ *
+ * KHÔNG giấu dòng chữ như bản trước: còn mỗi cái đồng hồ đếm ngược không lời
+ * giải thích thì người xem chỉ thấy một con số đang trôi mà không hiểu vì sao.
+ * Cho xuống dòng, giữ đủ ý.
+ */
+@media (max-width: 767px) {
+    .jp-cxm--bang { padding: 0.25rem 0.4rem; line-height: 1.7; }
+}
+
+@media (max-width: 640px) {
+    .jp-cxm--hop { margin-top: 12px; padding: 11px 13px; }
+    .jp-cxm-dhto { font-size: 15px; }
+    .jp-cxm-dhto .jp-cxm-dh { font-size: 15px; }
+    .jp-cxm-chu { font-size: 12px; }
+    .jp-cxm-nut--to { width: 100%; justify-content: center; }
+}
+
+/* ── Hộp chi tiết trên ĐIỆN THOẠI: bảng 2 cột → xếp chồng ──────────────────
+ *
+ * Bảng "CHI TIẾT THÀNH TÍCH" là hai cột nhãn|giá trị. Trên màn 390px thì cột
+ * nhãn ("THÀNH TÍCH ĐẠT CHUẨN:") nuốt gần nửa chiều ngang, phần giá trị còn
+ * một dải hẹp — tên giải bị bẻ từng ký tự xuống dòng, đọc không nổi.
+ *
+ * Không vá bằng cách thu nhỏ chữ: bố cục hai cột vốn không hợp màn hẹp. Nhãn
+ * lên trên, giá trị xuống dưới chiếm trọn chiều ngang — hai bố cục cho hai
+ * kích thước, không phải một bố cục ép cho vừa.
+ */
+@media (max-width: 640px) {
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table,
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table tbody,
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table tr,
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td {
+        display: block;
+        width: 100%;
+    }
+
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table tr {
+        padding: 7px 0;
+        border-bottom: 1px solid rgba(45, 45, 45, .09);
+    }
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table tr:last-child {
+        border-bottom: 0;
+    }
+
+    /* Nhãn: nhỏ, mờ, về bên trái — .uk-text-right của UIkit phải bị đè */
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td:first-child {
+        padding: 0 0 3px;
+        text-align: left !important;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: .03em;
+        opacity: .62;
+    }
+    #jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td:nth-child(2) {
+        padding: 0;
+    }
+
+    /* Có trọn chiều ngang rồi thì cho danh sách cao hơn, bớt phải cuộn */
+    #jp_googlesheet_api-modal .jp-ach-list { max-height: 240px; }
+
+    /* Đạt chuẩn: thời gian + hạng + PR một dòng, TÊN GIẢI xuống dòng riêng.
+       Nhồi tên giải cùng hàng là thứ gây ra cảnh bẻ từng ký tự lúc đầu — cụm
+       đầu đã chiếm gần 180px, tên giải còn lại chưa tới một nửa chiều ngang. */
+    #jp_googlesheet_api-modal .jp-other,
+    #jp_googlesheet_api-modal .jp-t3 {
+        flex-wrap: wrap;
+        padding: 3px 0;
+    }
+    #jp_googlesheet_api-modal .jp-other-race {
+        flex: 1 0 100%;
+        margin-top: 1px;
+        line-height: 1.4;
+    }
+    /* TOP 3 thì KHÔNG xuống dòng: pill "TOP 1" chỉ rộng 40px, đẩy chữ xuống
+       hàng riêng là bỏ trống hai phần ba dòng, dài gấp đôi mà chẳng dễ đọc hơn. */
+    #jp_googlesheet_api-modal .jp-t3 { align-items: flex-start; }
+    #jp_googlesheet_api-modal .jp-t3-txt { line-height: 1.4; }
+    #jp_googlesheet_api-modal .jp-other b,
+    #jp_googlesheet_api-modal .jp-other-rank { font-size: 11px; }
+}
+
+/* Nút ⓘ cạnh tiêu đề cột ultra — mở bảng giải thích nhóm + điểm. */
+.jp-cot-i {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 14px; height: 14px; margin-left: 4px; vertical-align: 1px;
+    border: 1px solid currentColor; border-radius: 50%;
+    background: transparent; color: inherit; opacity: .7;
+    font: italic 700 9px/1 Georgia, serif; cursor: pointer; padding: 0;
+}
+.jp-cot-i:hover { opacity: 1; }
+/* Chi tiết VĐV: dòng mô tả kết quả ultra dưới mỗi thành tích. */
+.jp-other-ultra {
+    flex-basis: 100%; width: 100%;
+    font-size: 11px; color: rgb(100, 116, 139); margin-top: 2px; line-height: 1.4;
+}
+.jp-other-ultra b { color: rgb(180, 83, 9); }
+#jp_googlesheet_api-modal .jp-other:has(.jp-other-ultra) { flex-wrap: wrap; }
+#jp_googlesheet_api-modal .jp-other-ultra b { font-family: inherit; color: rgb(180, 83, 9); }
+
+/* Điện thoại: dòng nhỏ dưới giờ không được nới cột giờ quá nửa màn hình. */
+@media (max-width: 767px) {
+    /* Cột tên phải CO được (minmax 0) — mặc định 1fr không co dưới bề rộng chữ,
+       nên tên dài + dòng nhỏ dài đẩy cột giờ ra ngoài màn hình. */
+    .jp-leaderboard-row.jp-ultra,
+    #jp-table-header.jp-ultra { grid-template-columns: 30px minmax(0, 1fr) auto; }
+    .jp-leaderboard-row.jp-ultra .jp-competitor-cell { min-width: 0; }
+    .jp-leaderboard-row.jp-ultra .jp-mark-cell { max-width: 42vw; min-width: 0; }
+    .jp-leaderboard-row.jp-ultra .jp-mark-race { max-width: 100%; }
+}

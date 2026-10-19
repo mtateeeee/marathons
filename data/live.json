@@ -1,0 +1,124 @@
+{
+  "data": [
+    {
+      "type": "shop",
+      "name": "Ngô Quang V.",
+      "action": "vừa mua",
+      "title": "Chứng chỉ VBM",
+      "url": "https://my.bestmarathon.vn/cua-hang/chung-chi-vbm",
+      "at": "2026-10-19T09:30:02+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Nguyễn T.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T08:48:35+00:00"
+    },
+    {
+      "type": "shop",
+      "name": "Ngô Quang V.",
+      "action": "vừa mua",
+      "title": "Chứng chỉ VBM",
+      "url": "https://my.bestmarathon.vn/cua-hang/chung-chi-vbm",
+      "at": "2026-10-19T08:09:48+00:00"
+    },
+    {
+      "type": "shop",
+      "name": "Ngô Quang V.",
+      "action": "vừa mua",
+      "title": "Chứng chỉ VBM",
+      "url": "https://my.bestmarathon.vn/cua-hang/chung-chi-vbm",
+      "at": "2026-10-19T07:56:22+00:00"
+    },
+    {
+      "type": "shop",
+      "name": "Nguyễn Chí T.",
+      "action": "vừa mua",
+      "title": "Chứng chỉ VBM",
+      "url": "https://my.bestmarathon.vn/cua-hang/chung-chi-vbm",
+      "at": "2026-10-19T07:55:06+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Phùng Văn L.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T07:07:56+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Hoàng Thị H.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T06:57:19+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Ngô Thị L.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T06:50:19+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Nguyễn Kiều O.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T03:42:34+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Cheon S.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T00:42:37+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Đào H.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T00:33:03+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Trần Hữu Thiện A.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-19T00:17:38+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Huỳnh Công S.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-18T17:00:51+00:00"
+    },
+    {
+      "type": "shop",
+      "name": "Trần Văn T.",
+      "action": "vừa mua",
+      "title": "Chứng chỉ VBM",
+      "url": "https://my.bestmarathon.vn/cua-hang/chung-chi-vbm",
+      "at": "2026-10-18T15:16:53+00:00"
+    },
+    {
+      "type": "race",
+      "name": "Lê Thị Kim N.",
+      "action": "vừa đăng ký",
+      "title": "RẠNG RỠ VIỆT NAM — GIẢI CHẠY CHÀO MỪNG NGÀY PHỤ NỮ VIỆT NAM 20/10",
+      "url": "https://my.bestmarathon.vn/giai-chay-ao/rang-ro-viet-nam-giai-chay-chao-mung-ngay-phu-nu-viet-nam-2010",
+      "at": "2026-10-18T14:33:58+00:00"
+    }
+  ]
+}

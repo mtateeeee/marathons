@@ -1,0 +1,327 @@
+/* ==========================================================================
+   VBM EDITORIAL ATHLETIC THEME — TRACK CLAY & DEEP SLATE
+   Designed to feel like an authentic sports telemetry & timing authority
+   (World Athletics / UTMB / Strava Tartan Clay aesthetic)
+   ========================================================================== */
+
+:root {
+    --vbm-clay: #C84B31;
+    --vbm-clay-hover: #AD3B23;
+    --vbm-clay-light: #FDF5F2;
+    --vbm-clay-border: #F2D6CE;
+    --vbm-bronze: #B88646;
+    --vbm-bronze-light: #F9F4EB;
+    --vbm-slate-950: #0F141C;
+    --vbm-slate-900: #141B23;
+    --vbm-slate-800: #1E2733;
+    --vbm-paper: #F6F5F0;
+    --vbm-card-border: #E4E2DA;
+    --vgm-gold-grad: linear-gradient(135deg, #D95D39 0%, #B84225 100%);
+    --vbm-gold: #C84B31;
+    --vbm-gold-light: #F9EAE5;
+    --vbm-gold-gradient: linear-gradient(135deg, #C84B31, #A83820);
+    --vbm-dark: #141B23;
+    --vbm-bg-light: #F4F2EC;
+    --vbm-border: #E4E2DA;
+}
+
+/* Base Page Canvas & Tabular Numerals for Sports Timing */
+body,
+.vbm-homepage {
+    background-color: var(--vbm-paper) !important;
+    color: var(--vbm-slate-900);
+    -webkit-font-smoothing: antialiased;
+}
+
+.jp-mark-time,
+.jp-tri-splits,
+.jp-page-btn,
+.jp-page-input,
+#header-stats span,
+.bm-time-val,
+.bm-rank-val,
+.jp-other-time,
+.jp-other-rank,
+.jp-nhom-count,
+.jp-cxm-dh {
+    font-variant-numeric: tabular-nums !important;
+    font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Remove AI-looking spinning sheen animations */
+@keyframes vgmShine { 0%, 100% { opacity: 0; transform: none; } }
+@keyframes vbm-shine { 0%, 100% { opacity: 0; transform: none; } }
+.vbm-footer-logo-wrapper::after { display: none !important; }
+.jp-badge.badge-yellow::after,
+#jp_googlesheet_api-modal .jp-badge.badge-yellow::after {
+    display: none !important;
+}
+
+/* Header & Logo Refinement: Crisp Warm Sand / Clay Badge so logo-black.png is 100% legible */
+.vgmhd-logo-d > div,
+.vgmhd-logo-m > div,
+#vgmhdDrawer > div:first-child > div:first-child,
+.vbm-footer-logo-wrapper {
+    background: linear-gradient(135deg, #F3EDE2 0%, #E7DEC8 100%) !important;
+    border: 1px solid #D5C7AD !important;
+    border-bottom: 3px solid var(--vbm-clay) !important;
+    box-shadow: 0 2px 6px rgba(20, 27, 35, 0.06) !important;
+    border-radius: 8px !important;
+}
+.vgmhd-logo-d > div > div,
+.vgmhd-logo-m > div > div,
+#vgmhdDrawer > div:first-child > div:first-child > div {
+    display: none !important;
+}
+
+/* Header Account CTA button */
+.vgmhd-acct,
+.vgmhd-acct-m,
+#vgmhdLogin {
+    background: var(--vbm-slate-900) !important;
+    color: #FFFFFF !important;
+    border: 1px solid var(--vbm-slate-800) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 6px rgba(20, 27, 35, 0.14) !important;
+}
+.vgmhd-acct:hover {
+    background: var(--vbm-clay) !important;
+    border-color: var(--vbm-clay) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(200, 75, 49, 0.25) !important;
+}
+.vgmhd-acct-m svg {
+    stroke: #FFFFFF !important;
+}
+
+/* Mega Menu Featured Card: Deep Slate + Terracotta Editorial Card */
+.vgmhd-feat {
+    background: linear-gradient(155deg, #161F2A 0%, #1E2938 65%, #2D1F1B 100%) !important;
+    border: 1px solid #2D3846 !important;
+}
+.vgmhd-feat > div:last-child > div:nth-child(1) {
+    color: #E07A5F !important;
+}
+.vgmhd-feat > div:last-child > div:nth-child(2) {
+    color: #FFFFFF !important;
+}
+.vgmhd-feat > div:last-child > div:nth-child(3) {
+    color: rgba(255, 255, 255, 0.78) !important;
+}
+
+/* Hero Section — Deep Track Slate + Terracotta Track Line */
+.vbm-hero-fullwidth {
+    background: linear-gradient(180deg, #111720 0%, #17202B 100%) !important;
+    border-bottom: 3px solid var(--vbm-clay) !important;
+}
+.vbm-hero-fullwidth .from-yellow-400 {
+    background-image: linear-gradient(90deg, #E76F51 0%, #D4A359 100%) !important;
+}
+.vbm-hero-fullwidth .border-yellow-500\/50 {
+    border-left-color: var(--vbm-clay) !important;
+}
+.vbm-hero-fullwidth .drop-shadow-\[0_0_15px_rgba\(255\,215\,0\,0\.4\)\] {
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35)) !important;
+}
+
+/* Hero KPI Telemetry Cards — Crisp Technical Grid */
+#header-stats > div {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.11) !important;
+    border-top: 2px solid rgba(200, 75, 49, 0.55) !important;
+    border-radius: 6px !important;
+    backdrop-filter: none !important;
+}
+#header-stats > div:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(231, 111, 81, 0.65) !important;
+    transform: translateY(-1px);
+}
+#header-stats > div > span:first-child {
+    color: #94A3B8 !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 700 !important;
+}
+#header-stats > div > span:nth-child(2) {
+    color: #F8FAFC !important;
+}
+
+/* Controls Bar & Category Tabs */
+#jp-leaderboard-new .bg-\[#E5E5E5\] {
+    background: #EAE8E0 !important;
+    border: 1px solid #DCD9CE !important;
+    border-radius: 10px !important;
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.05) !important;
+}
+.jp-tab-button {
+    border-right: 1px solid rgba(255, 255, 255, 0.7) !important;
+}
+.jp-tab-button.active {
+    background: var(--vbm-slate-900) !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.16) !important;
+    border-bottom: 2px solid var(--vbm-clay) !important;
+}
+.jp-tab-button.active span {
+    color: #FFFFFF !important;
+}
+.jp-tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16%;
+    right: 16%;
+    height: 2px;
+    background: var(--vbm-clay);
+}
+#jp-search-input:focus {
+    border-color: var(--vbm-clay) !important;
+    box-shadow: 0 0 0 2px rgba(200, 75, 49, 0.15) !important;
+}
+#jp-refresh-btn:hover {
+    border-color: var(--vbm-clay) !important;
+    color: var(--vbm-clay) !important;
+}
+
+/* Live Strip Ticker */
+.jp-live-bar {
+    background: #FFFFFF !important;
+    border: 1px solid var(--vbm-card-border) !important;
+    border-left: 3px solid var(--vbm-clay) !important;
+    border-radius: 8px !important;
+}
+.jp-live-badge {
+    background: var(--vbm-clay) !important;
+    color: #FFFFFF !important;
+    border-radius: 4px !important;
+    letter-spacing: 0.08em !important;
+}
+.jp-live-dot {
+    background: #FFFFFF !important;
+}
+.jp-live-wave {
+    color: var(--vbm-clay) !important;
+}
+.jp-live-title {
+    color: var(--vbm-clay) !important;
+}
+.jp-live-sep {
+    background: #CBD5E1 !important;
+}
+
+/* Leaderboard Table Header & Rows */
+#jp-leaderboard-new > .bg-white.shadow-xl.rounded-2xl {
+    border-radius: 10px !important;
+    border: 1px solid var(--vbm-card-border) !important;
+    box-shadow: 0 4px 16px rgba(20, 27, 35, 0.05) !important;
+}
+#jp-table-header,
+.bg-premium-gold {
+    background: var(--vbm-slate-900) !important;
+    color: #E2E8F0 !important;
+    border-bottom: 2px solid var(--vbm-clay) !important;
+}
+.jp-leaderboard-row:hover {
+    background-color: #FAF6F3 !important;
+}
+.jp-star {
+    fill: var(--vbm-bronze) !important;
+    color: var(--vbm-bronze) !important;
+}
+
+/* Pagination */
+.jp-page-btn, .jp-page-nav {
+    border-radius: 6px !important;
+    border-color: #DCD9CE !important;
+}
+.jp-page-btn.active {
+    background: var(--vbm-clay) !important;
+    color: #FFFFFF !important;
+    border-color: var(--vbm-clay) !important;
+    box-shadow: 0 2px 6px rgba(200, 75, 49, 0.25) !important;
+}
+.jp-page-btn:hover:not(.active), .jp-page-nav:hover:not(:disabled) {
+    border-color: var(--vbm-clay) !important;
+    color: var(--vbm-clay) !important;
+    background: #FDF8F6 !important;
+}
+
+/* About & FAQ Section — Editorial Polish */
+.bg-white.rounded-\[24px\] {
+    border-radius: 12px !important;
+    border-color: var(--vbm-card-border) !important;
+    box-shadow: 0 2px 8px rgba(20, 27, 35, 0.04) !important;
+}
+#faq-container > .group {
+    border-radius: 8px !important;
+    border: 1px solid var(--vbm-card-border) !important;
+    box-shadow: none !important;
+}
+#faq-container > .group:hover {
+    border-color: var(--vbm-clay) !important;
+    background: #FDFCFB !important;
+}
+
+/* Sponsors & Partners Cards */
+.vbm-sponsor-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--vbm-card-border) !important;
+    border-radius: 10px !important;
+}
+.vbm-sponsor-card:hover {
+    border-color: var(--vbm-clay) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(20, 27, 35, 0.07) !important;
+}
+.vbm-partner-card {
+    border-radius: 8px !important;
+    border-color: var(--vbm-card-border) !important;
+}
+.vbm-partner-card:hover {
+    border-color: var(--vbm-bronze) !important;
+}
+
+/* Modal & VIP Section De-AI-ification:
+   Remove floating blobs and rainbow pastel icons; use clean athletic telemetry styling */
+.jp-vip-blob {
+    display: none !important;
+}
+#jp_googlesheet_api-modal .jp-vip-locked {
+    background: #FFFFFF !important;
+    border: 1px solid var(--vbm-card-border) !important;
+    border-radius: 12px !important;
+    padding: 28px 24px !important;
+}
+#jp_googlesheet_api-modal .jp-vip-crown-circle {
+    background: var(--vbm-slate-900) !important;
+    color: var(--vbm-bronze) !important;
+    box-shadow: none !important;
+    border: 2px solid var(--vbm-bronze) !important;
+}
+#jp_googlesheet_api-modal .jp-vip-title span {
+    color: var(--vbm-clay) !important;
+    background: none !important;
+    -webkit-text-fill-color: var(--vbm-clay) !important;
+}
+#jp_googlesheet_api-modal .jp-vip-feature {
+    background: #F8F7F3 !important;
+    border: 1px solid #E4E2DA !important;
+    border-radius: 8px !important;
+}
+#jp_googlesheet_api-modal .jp-vip-feature:hover {
+    border-color: var(--vbm-clay) !important;
+    transform: none !important;
+}
+#jp_googlesheet_api-modal .jp-vip-feature-icon {
+    background: var(--vbm-slate-900) !important;
+    color: #FFFFFF !important;
+    border-radius: 6px !important;
+}
+#jp_googlesheet_api-modal .jp-vip-cta-btn {
+    background: var(--vbm-clay) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(200, 75, 49, 0.25) !important;
+}
+#jp_googlesheet_api-modal .jp-vip-cta-btn:hover {
+    background: var(--vbm-clay-hover) !important;
+}

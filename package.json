@@ -1,0 +1,10 @@
+{
+  "name": "vbm-marathon-leaderboard",
+  "version": "1.0.0",
+  "description": "Vietnam's Best Marathons (VBM) Leaderboard Clone — Track Clay & Deep Slate Editorial Edition",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}

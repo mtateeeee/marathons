@@ -1,0 +1,15 @@
+{
+  "data": [
+    {
+      "ma": "RD100",
+      "ten": "Ultra đường nhựa 100",
+      "total": 123
+    },
+    {
+      "ma": "RD160",
+      "ten": "Ultra đường nhựa 160",
+      "total": 3
+    }
+  ],
+  "event": "ULTRA_ROAD"
+}

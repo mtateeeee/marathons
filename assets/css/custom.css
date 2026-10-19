@@ -1,0 +1,2132 @@
+/*Custom */
+.__star svg polygon {
+    fill: #d9c51d;
+    stroke: transparent !important;
+}
+
+/* .switcher_div { */
+
+/* font-size: 14px; */
+/* overflow: auto; */
+/* max-height: 90vh; */
+/* overflow-y: scroll; */
+/* } */
+
+.__name {
+
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+[data-target="__subimg"] {
+    /* Your CSS styles here */
+    height: 65px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.star_undefined {
+    display: none;
+}
+
+/* .switcher_div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.switcher_div::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.switcher_div::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+.switcher_div .uk-table td {
+    padding: 5px;
+    font-weight: bold;
+} */
+
+.uk-modal-container .uk-modal-dialog {
+    width: 1118px;
+    border-radius: 20px;
+    background: #E9EAF0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+/* 1) Container có vị trí để pseudo-element bám vào */
+#jp_googlesheet_api-modal .jp_ggs_modal_content{
+  position: relative;
+}
+
+/* 2) Khi PROFILES (content_nav1) đang hiển thị => đặt nền cho toàn khối content */
+#jp_googlesheet_api-modal .jp_ggs_modal_content:has(.content_nav1:not(.uk-hidden))::before{
+  content:"";
+  position:absolute;
+  inset:0;                  /* phủ cả padding */
+  border-radius:12px;       /* bo góc nếu muốn */
+  background:url("https://bestmarathon.vn/wp-content/plugins/jp-google-sheet-api-5/images/nentt1.png")
+             center/cover no-repeat;
+  z-index:0;
+}
+
+/* 3) Đảm bảo nội dung nằm trên nền */
+#jp_googlesheet_api-modal .jp_ggs_modal_content > *{
+  position:relative;
+  z-index:1;
+}
+
+/* 4) Nếu trước đó bạn đã dùng nền ở .profile-scope::before thì tắt đi để khỏi trùng nền */
+#jp_googlesheet_api-modal .profile-scope::before{ display:none !important; }
+
+
+.jp_ggs_modal_nav_item .__img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.jp_ggs_modal_nav .uk-grid>*:first-child>.__img {
+    border-radius: 50%;
+    width: 67px;
+    height: 67px;
+}
+
+.jp_ggs_modal_nav>* {
+    padding: 25px;
+    height: 100%;
+    background: #FFF;
+    box-shadow: 2px 2px 4px 0px rgba(206, 216, 236, 0.70), -2px -2px 4px 0px rgba(255, 255, 255, 0.70);
+}
+
+.uk-width-small\@s {
+    width: 145px;
+}
+
+.jp_ggs_modal_nav_item>* {
+    box-shadow: 2px 2px 4px 0px rgba(206, 216, 236, 0.70), -2px -2px 4px 0px rgba(255, 255, 255, 0.70);
+    border-radius: 20px;
+    border: 1px solid #DEF5FD;
+    background: #FFF;
+    padding: 10px 0;
+}
+
+.jp_ggs_modal_nav_item>* p {
+
+    margin: 0;
+    padding-top: 10px;
+    line-height: 18px;
+}
+
+.jp_ggs_modal_nav_item.active>div {
+    border: 1px solid #38A3FF;
+    box-shadow: 2px 2px 4px 0px rgba(206, 216, 236, 0.70), -2px -2px 4px 0px rgba(255, 255, 255, 0.70);
+}
+
+.jp_ggs_modal_content {
+    padding: 25px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.jp_ggs_modal_content h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    color: #000;
+
+}
+
+.uk-card-default {
+    /* box-shadow: 2px 2px 4px 0px rgba(206, 216, 236, 0.70), -2px -2px 4px 0px rgba(255, 255, 255, 0.70); */
+    border-radius: 20px;
+    background: #ECEDF4;
+    padding: 40px 20px;
+    background: transparent !important;
+    border: 1px solid #2d2d2d;
+}	
+	
+/* Chỉ bỏ viền/đổ bóng ở khối CHI TIẾT THÀNH TÍCH */
+#jp_googlesheet_api-modal .profile-scope .jp_ggs_modal_content_thongtin.uk-card-default {
+  border: 0 !important;                /* nếu trước đó có border */
+  box-shadow: none !important;          /* bỏ shadow - muốn giữ shadow thì xóa dòng này */
+  background: transparent !important;   /* nền trong suốt để thấy background phía sau */
+  border-radius: 20px;                  /* vẫn bo góc như cũ (tuỳ chọn) */
+  padding: 10px 10px;                   /* đúng như bạn set cho block này */
+}
+
+
+.uk-card-default .uk-icon svg polygon {
+    fill: #2d2d2d;
+    stroke: transparent !important;
+}
+
+.info_small {
+    color: #2d2d2d;
+}
+
+[data-target="__name"] {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.uk-modal-close-default {
+    background-color: #c4c4c4;
+    color: #FFF;
+    /* border-radius: 50%; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 10px;
+    padding: 0;
+    line-height: 1;
+    min-height: 30px;
+    border-radius: 5px;
+}
+
+.info_small .__img {
+    width: 210px;
+    height: 210px;
+    border-radius: 100px;
+}
+
+/* Màu cho các ô giá trị trong bảng CHI TIẾT THÀNH TÍCH */
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td[data-target]{
+  color: #2d2d2d !important;
+}
+
+/* Bảo đảm text con bên trong (__thanh_tich có nhiều <div>) cũng lên màu */
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td[data-target] *{
+  color: inherit !important;
+}
+
+/* Link trong ô giá trị (NGUỒN KẾT QUẢ) cũng lên #2d2d2d */
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td[data-target] a,
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td[data-target] a:visited,
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td[data-target] a:hover{
+  color: #2d2d2d !important;
+  text-decoration: underline; /* tuỳ chọn */
+}
+
+
+.info_items>* {
+    /* border-radius: 100px; */
+    /* border: 1px solid #DEF5FD; */
+    background: #ECEDF4;
+    /* box-shadow: 2px 2px 4px 0px rgba(206, 216, 236, 0.70), -2px -2px 4px 0px rgba(255, 255, 255, 0.70); */
+    padding: 2px 20px;
+    color: #000;
+    font-size: 15px;
+    background: transparent;
+}
+
+.info_items>* small {
+    color: #2d2d2d;
+    font-size: 12px;
+}
+
+/* Danh hiệu Marathon - AA */
+.jpga-danh-hieu {
+    font-weight: 600;
+    color: #2d2d2d !important;
+    font-size: 15px;
+}
+
+.jpga-danh-hieu:empty::before {
+    content: '—';
+    color: #999;
+}
+/* 1) Bỏ gạch ngang trong bảng của CHI TIẾT THÀNH TÍCH */
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table td,
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table th {
+  border-bottom: 0 !important;
+}
+
+/* (tuỳ chọn) chắc chắn bảng không có đường viền ẩn nào */
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table,
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin .uk-table tr {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+}
+
+/* 2) GIỮ vạch <hr> và chỉnh màu/độ mờ nếu muốn */
+#jp_googlesheet_api-modal .jp_ggs_modal_content_thongtin hr{
+  display: block !important;
+  margin: 12px 0;
+  height: 0;
+  border: 0;
+  border-top: 1.5px solid #2d2d2d !important; /* màu đen */
+  opacity: 1 !important;
+}
+
+
+.jp_ggs_modal_content_rank .uk-grid>*>* {
+    /* border-radius: 16px; */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); */
+    text-align: center;
+    transition: 0.3s;
+    /* background-position: center; */
+    background: transparent !important;
+    /* box-shadow: 2px 2px 4px 0px rgba(206, 216, 236, 0.70), -2px -2px 4px 0px rgba(255, 255, 255, 0.70); */
+}
+
+.uk-h6 {
+color: #332d2d;
+}
+
+
+.jp_ggs_modal_content_rank p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.jp_ggs_modal_content_rank small {
+    font-size: 10px;
+    transform: translateY(10px);
+}
+
+thead {
+    background-color: #898989;
+    color: #FFF;
+
+}
+[data-target="__rank_tri"],
+[data-target="__rank_ultra_trail"],
+[data-target="__rank_ultra_road"],
+[data-target="__rank_42"],
+[data-target="__rank_21"],
+[data-target="__rank_10"] {
+    font-size: 14px;
+    color: #ff1313;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    line-height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10px;
+	font-size: 21px;
+	 font-weight: 600;
+}
+
+[data-target="__rank_42"] .uk-text-bold,
+[data-target="__rank_21"] .uk-text-bold,
+[data-target="__rank_10"] .uk-text-bold,
+[data-target="__rank_tri"] .uk-text-bold,
+[data-target="__rank_ultra_trail"] .uk-text-bold,
+[data-target="__rank_ultra_road"] .uk-text-bold
+{
+    font-size: 14px;
+    margin-top: 10px;
+	color: #332d2d;
+}
+.uk-text-bold {
+    font-weight: 400;
+}
+
+[data-target="__rank_21"] {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10px;
+	
+}
+
+[data-target="__rank_10"] {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.uk-table td {
+
+    vertical-align: middle;
+}
+
+/* [data-target="__rank_21"] {
+    color: #C524E0;
+    font-size: 32px;
+} */
+
+/* [data-target="__rank_10"] {
+    color: #38A3FF;
+} */
+
+.jp_ggs_modal_content_thongtin {
+    padding: 10px 10px;
+    color: #2d2d2d;
+    font-size: 16px;
+	background: transparent !important;
+}
+
+
+.uk-table-small td,
+.uk-table-small th {
+    padding: 5px;
+}
+
+.rank_value {
+    border-radius: 100px;
+    background: linear-gradient(358deg, #fbad18 0%, #ee2a29 100%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    display: flex;
+
+}
+
+.rank_title {
+    text-align: center;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.ju_chungnhan {
+    background-image: url('../images/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 815px;
+    height: 490px;
+    margin-right: auto;
+    transform-origin: top left;
+    overflow: hidden;
+}
+
+.ju_first {
+    padding-top: 85px;
+    width: 295px;
+    padding-left: 88px;
+
+}
+
+.uk-text-right {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.jp_googlesheet_api_modal .ju_chungnhan .__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+[data-target="__star"] {
+    text-align: center;
+}
+
+[data-target="__star"] .uk-icon polygon {
+    fill: #ffe500;
+    stroke: transparent !important;
+
+}
+
+.ju_time {
+    font-weight: bold;
+    color: #614b00 !important;
+    font-size: 25px !important;
+    padding-top: 45px !important;
+}
+
+.__divright {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.__divright>* {
+    width: 100%;
+}
+
+[data-target="__tengiai"] {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* Phôi 140.6: dòng "…tại giải đấu:" in sẵn nằm thấp hơn phôi FM/HM 42px
+   (đo trên FULLIRON.jpg: y 410-423, còn FM-M.jpg: y 369-383), nên tên giải
+   phải tụt xuống theo, nếu không sẽ đè lên câu in sẵn. */
+.ju_chungnhan[data-cert="FULLIRON"] [data-target="__tengiai"] {
+    margin-top: 39px;
+}
+
+.ju_time+.uk-flex {
+    gap: 4px;
+    padding-top: 35px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+	color: #614b00;
+}
+
+.ju_time [data-target="__mark"] {
+    white-space: nowrap;
+}
+
+.ju_chungnhan [data-target="__star"] svg {
+    width: 25px;
+    height: 25px;
+}
+
+.ju_chungnhan {
+    border-radius: 10px;
+    border: 2px solid #FFF;
+}
+
+.ju_chungnhan [data-target="__name"] {
+    padding-top: 41px;
+    font-size: 29px;
+    color: #FFF;
+    white-space: nowrap;
+    /* Phôi chứng nhận in chữ hoa; 458/13.998 tên trong kho lưu kiểu "Lê Việt Dũng"
+       nên lọt ra chữ thường giữa tấm phôi. Viết hoa ở CHỖ HIỂN THỊ, không đụng
+       dữ liệu — tên gốc còn dùng cho liên kết xác minh và hồ sơ VĐV. */
+    text-transform: uppercase;
+}
+
+.ju_second {
+    padding-top: 120px;
+    text-align: center;
+    padding-left: 90px;
+    min-width: 0;
+    overflow: hidden;
+    padding-right: 35px;
+}
+
+@media only screen and (max-width:1200px) {
+    .uk-h6 {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:640px) {
+
+    .uk-modal-close-default {
+        top: 0;
+        right: 0;
+    }
+
+    .uk-modal-container .uk-modal-dialog {
+        height: 100%;
+        overflow: auto;
+    }
+
+    .jp_ggs_modal_content h3 {
+        font-size: 20px;
+    }
+
+    .jp_ggs_modal_nav {
+        width: 100%;
+    }
+
+    .__name {
+        font-size: 10px;
+        /* white-space: wrap; */
+    }
+
+    .uk-modal {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .uk-modal-container .uk-modal-dialog {
+        border-radius: 0;
+    }
+
+    .jp_ggs_modal_nav>* {
+        padding: 5px;
+        box-sizing: border-box;
+        padding-top: 20px;
+    }
+
+    .jp_ggs_modal_content {
+        padding: 10px;
+    }
+
+    .switcher_div {
+        font-size: 10px;
+    }
+
+    .switcher_div tr>td:nth-child(n+5) {
+        display: none !important;
+    }
+/*
+    .jp_ggs_modal_content_rank {
+        display: none !important;
+    }*/
+}
+
+.ju_chungnhan_wrap {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 815px;
+}
+
+/* ============================================
+   CERTIFICATE BUTTONS - Modern Design
+   ============================================ */
+.jp-cert-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.jp-cert-btn-row {
+    display: flex;
+    gap: 12px;
+}
+
+.jp-cert-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    font-family: 'Be Vietnam Pro', -apple-system, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.jp-cert-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.jp-cert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.jp-cert-btn:active {
+    transform: translateY(0);
+}
+
+/* Facebook Button */
+.jp-btn-facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0d5bbd 100%);
+    color: white !important;
+}
+
+.jp-btn-facebook:hover {
+    background: linear-gradient(135deg, #166fe5 0%, #0a4a9e 100%);
+    color: white !important;
+}
+
+/* Zalo Button */
+.jp-btn-zalo {
+    background: linear-gradient(135deg, #0068ff 0%, #0050cc 100%);
+    color: white !important;
+}
+
+.jp-btn-zalo:hover {
+    background: linear-gradient(135deg, #005ce6 0%, #0045b3 100%);
+    color: white !important;
+}
+
+/* Download Button - Gold theme */
+.jp-btn-download {
+    background: linear-gradient(135deg, #C84B31 0%, #B88646 100%);
+    color: #1a1a2e !important;
+}
+
+.jp-btn-download:hover {
+    background: linear-gradient(135deg, #ffcc00 0%, #ff9500 100%);
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+}
+
+/* Order Button - Dark with gold accent */
+.jp-btn-order {
+    background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+    color: #C84B31 !important;
+    border: 2px solid #C84B31;
+}
+
+.jp-btn-order:hover {
+    background: linear-gradient(135deg, #C84B31 0%, #B88646 100%);
+    color: #1a1a2e !important;
+    border-color: transparent;
+}
+
+/* Loading state */
+.jp-cert-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+    .jp-cert-buttons {
+        padding: 0 5px;
+        gap: 10px;
+    }
+
+    .jp-cert-btn-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .jp-cert-btn {
+        padding: 12px 16px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .jp-cert-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .jp-cert-btn {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .jp-cert-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ============================================
+   VIP SECTION STYLES - NEW DESIGN v3.6
+   ============================================ */
+
+/* Style VIP tab when visible (not hidden) */
+.content_nav3.content_nav:not(.uk-hidden) {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* =============================================
+   VIP LOCKED STATE - for non-VIP users
+   ============================================= */
+.jp-vip-locked {
+    width: 100% !important;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    position: relative;
+    overflow: visible;
+    border-radius: 0 !important;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    color: #111827;
+}
+
+.jp-vip-locked * {
+    font-family: inherit !important;
+}
+
+/* Decorative Blobs - hidden since no background */
+.jp-vip-blob {
+    display: none !important;
+}
+
+/* Header Section */
+.jp-vip-header {
+    display: block !important;
+    width: 100% !important;
+    padding: 40px 32px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    float: none !important;
+    box-sizing: border-box;
+}
+
+.jp-vip-crown-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fef9c3 0%, #ffedd5 100%);
+    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.06);
+    border: 4px solid white;
+    margin-bottom: 24px;
+}
+
+.jp-vip-crown-circle svg {
+    width: 40px;
+    height: 40px;
+    fill: #ca8a04 !important;
+}
+
+h3.jp-vip-title,
+.jp-vip-title {
+    font-size: 28px !important;
+    font-weight: 900 !important;
+    color: #111827 !important;
+    margin: 0 0 8px 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-style: normal !important;
+    line-height: 1.2 !important;
+}
+
+h3.jp-vip-title span,
+.jp-vip-title span {
+    color: #ca8a04 !important;
+    font-weight: 900 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: inherit !important;
+    font-style: normal !important;
+    letter-spacing: inherit !important;
+}
+
+.jp-vip-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Features Grid - 2 columns layout */
+.jp-vip-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+    padding: 0 32px 32px;
+    position: relative;
+    z-index: 10;
+    width: 100% !important;
+    float: none !important;
+    box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+    .jp-vip-features {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Feature Card */
+.jp-vip-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    background: #f9fafb;
+    border: 1px solid #f3f4f6;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.jp-vip-feature:hover {
+    transform: translateY(-2px);
+}
+
+/* Feature Icon */
+.jp-vip-feature-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.jp-vip-feature:hover .jp-vip-feature-icon {
+    transform: scale(1.1);
+}
+
+.jp-vip-feature-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Feature Colors - exact from index.html */
+.jp-vip-feature-blue .jp-vip-feature-icon {
+    background: #dbeafe;
+    color: #2563eb;
+}
+.jp-vip-feature-blue:hover {
+    background: rgba(254, 249, 195, 0.5);
+    border-color: #fef08a;
+}
+
+.jp-vip-feature-orange .jp-vip-feature-icon {
+    background: #ffedd5;
+    color: #ea580c;
+}
+.jp-vip-feature-orange:hover {
+    background: rgba(255, 237, 213, 0.5);
+    border-color: #fed7aa;
+}
+
+.jp-vip-feature-purple .jp-vip-feature-icon {
+    background: #f3e8ff;
+    color: #9333ea;
+}
+.jp-vip-feature-purple:hover {
+    background: rgba(250, 245, 255, 0.5);
+    border-color: #e9d5ff;
+}
+
+.jp-vip-feature-red .jp-vip-feature-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+.jp-vip-feature-red:hover {
+    background: rgba(254, 242, 242, 0.5);
+    border-color: #fecaca;
+}
+
+.jp-vip-feature-green .jp-vip-feature-icon {
+    background: #dcfce7;
+    color: #16a34a;
+}
+.jp-vip-feature-green:hover {
+    background: rgba(240, 253, 244, 0.5);
+    border-color: #bbf7d0;
+}
+
+.jp-vip-feature-indigo .jp-vip-feature-icon {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+.jp-vip-feature-indigo:hover {
+    background: rgba(238, 242, 255, 0.5);
+    border-color: #c7d2fe;
+}
+
+/* Feature Text - left aligned */
+.jp-vip-feature-text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+.jp-vip-feature-text strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.jp-vip-feature-text span {
+    display: block;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* CTA Section */
+.jp-vip-cta {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 32px 32px;
+    position: relative;
+    z-index: 10;
+    float: none !important;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.jp-vip-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to right, #C84B31, #f97316);
+    color: #fff !important;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+}
+
+.jp-vip-cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: transform 0.7s ease-in-out;
+}
+
+.jp-vip-cta-btn:hover::before {
+    transform: translateX(200%);
+}
+
+.jp-vip-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    color: #fff !important;
+}
+
+.jp-vip-cta-btn:active {
+    transform: translateY(0);
+}
+
+.jp-vip-cta-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor !important;
+}
+
+.jp-vip-cta-note {
+    text-align: center;
+    font-size: 12px;
+    color: #9CA3AF;
+    margin: 12px 0 0 0;
+}
+
+/* VIP Content Container */
+.jp-vip-content {
+    padding: 0;
+}
+
+/* VIP Hero Section */
+.jp-vip-hero {
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 20px;
+}
+
+.jp-vip-hero-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.jp-vip-dot {
+    width: 8px;
+    height: 8px;
+    background: #f97316;
+    border-radius: 50%;
+}
+
+.jp-vip-hero-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.jp-vip-hero-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.jp-vip-hero-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.jp-vip-hero-subtitle svg {
+    width: 14px;
+    height: 14px;
+    color: #eab308;
+}
+
+.jp-vip-hero-subtitle span {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.jp-vip-hero-rank {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.jp-vip-rank-value {
+    font-size: 32px;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.jp-vip-rank-total {
+    font-size: 16px;
+    font-weight: 500;
+    color: #94a3b8;
+}
+
+.jp-vip-hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.jp-vip-badge-gold {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #0f172a;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 4px;
+}
+
+.jp-vip-badge-gold svg {
+    width: 12px;
+    height: 12px;
+    color: #C84B31;
+}
+
+.jp-vip-badge-gold span {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.jp-vip-season {
+    font-size: 9px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* VIP Mileage Stats */
+.jp-vip-mileage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+}
+
+.jp-vip-mileage-item {
+    padding: 16px;
+    text-align: center;
+    border-right: 1px solid #e2e8f0;
+    transition: background 0.2s;
+}
+
+.jp-vip-mileage-item:last-child {
+    border-right: none;
+}
+
+.jp-vip-mileage-item:hover {
+    background: #f8fafc;
+}
+
+.jp-vip-mileage-item.highlight {
+    background: rgba(249, 115, 22, 0.05);
+}
+
+.jp-vip-mileage-item.highlight .jp-vip-mileage-label {
+    color: #ea580c;
+}
+
+.jp-vip-mileage-item.highlight .jp-vip-mileage-value span {
+    color: #0f172a;
+}
+
+.jp-vip-mileage-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.jp-vip-mileage-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+}
+
+.jp-vip-mileage-value span {
+    font-size: 22px;
+    font-weight: 900;
+    color: #475569;
+}
+
+.jp-vip-mileage-value small {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+/* VIP Two Columns */
+.jp-vip-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 20px;
+}
+
+.jp-vip-section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 16px;
+}
+
+.jp-vip-section-header svg {
+    width: 16px;
+    height: 16px;
+    color: #f97316;
+}
+
+.jp-vip-section-header h4 {
+    font-size: 12px;
+    font-weight: 900;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* VIP Activities */
+.jp-vip-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.jp-vip-activity-item {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.jp-vip-activity-item:last-child {
+    border-bottom: none;
+}
+
+.jp-vip-activity-date {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    flex-shrink: 0;
+    background: white;
+}
+
+.jp-vip-activity-date.active {
+    border-color: #f97316;
+    color: #ea580c;
+}
+
+.jp-vip-activity-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.jp-vip-activity-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.jp-vip-activity-meta {
+    font-size: 10px;
+    color: #94a3b8;
+}
+
+.jp-vip-activity-stats {
+    text-align: right;
+}
+
+.jp-vip-activity-distance {
+    font-size: 13px;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+.jp-vip-activity-distance small {
+    font-size: 9px;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+.jp-vip-activity-pace {
+    font-size: 9px;
+    font-weight: 700;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.jp-vip-activity-empty {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.jp-vip-strava-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: #FC4C02;
+    color: white !important;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none !important;
+    margin-top: 16px;
+    transition: background 0.2s;
+}
+
+.jp-vip-strava-btn:hover {
+    background: #e34402;
+    color: white !important;
+}
+
+.jp-vip-strava-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* VIP Gallery */
+.jp-vip-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.jp-vip-gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.jp-vip-gallery-item img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.jp-vip-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.jp-vip-gallery-empty {
+    grid-column: span 2;
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* VIP Mobile Responsive */
+@media (max-width: 768px) {
+    .jp-vip-mileage {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jp-vip-mileage-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .jp-vip-mileage-item:nth-child(1),
+    .jp-vip-mileage-item:nth-child(2) {
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .jp-vip-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px;
+    }
+
+    /* VIP Mobile Styles */
+    .jp-vip-header {
+        padding: 24px 16px 16px;
+    }
+
+    .jp-vip-crown-circle {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+    }
+
+    .jp-vip-crown-circle svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .jp-vip-title {
+        font-size: 18px;
+    }
+
+    .jp-vip-subtitle {
+        font-size: 12px;
+    }
+
+    .jp-vip-features {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 0 16px 16px;
+    }
+
+    .jp-vip-feature {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .jp-vip-feature-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 10px;
+    }
+
+    .jp-vip-feature-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .jp-vip-feature-text strong {
+        font-size: 13px;
+    }
+
+    .jp-vip-feature-text span {
+        font-size: 11px;
+    }
+
+    .jp-vip-cta {
+        padding: 0 16px 20px;
+    }
+
+    .jp-vip-cta-btn {
+        padding: 14px 20px;
+        font-size: 14px;
+        border-radius: 12px;
+    }
+
+    .jp-vip-hero-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .jp-vip-hero-right {
+        align-items: flex-start;
+    }
+
+    .jp-vip-rank-value {
+        font-size: 28px;
+    }
+
+    .jp-vip-mileage-value span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .jp-vip-locked {
+        border-radius: 16px;
+    }
+
+    .jp-vip-blob {
+        display: none;
+    }
+
+    .jp-vip-upgrade-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .jp-vip-hero {
+        padding: 16px;
+    }
+
+    .jp-vip-mileage-item {
+        padding: 12px 8px;
+    }
+
+    .jp-vip-gallery-item img {
+        height: 80px;
+    }
+
+    .jp-vip-feature-text strong {
+        font-size: 13px;
+    }
+
+    .jp-vip-feature-text span {
+        font-size: 11px;
+    }
+
+    .jp-vip-cta-note {
+        font-size: 10px;
+    }
+}
+
+/* add new */
+.nav-tabs+.tab-panels {
+    padding: 0.1px !important;
+}
+
+.__table_wrap thead td {
+    color: white;
+    background: #989898;
+    font-weight: bold;
+}
+
+td:first-child,
+th:first-child {
+    text-align: center;
+}
+
+.switcher_div.uk-switcher li {
+    margin-left: 0 !important;
+}
+
+.jp_googlesheet_api .uk-pagination .uk-button {
+    width: 35px;
+    justify-content: center;
+    background: #989898;
+    color: #FFF !important;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.uk-button {
+    line-height: 33px !important;
+}
+
+.jp_googlesheet_api_modal .ju_chungnhan .__img {
+    background: none;
+}
+
+[data-target="__star"] {
+    height: 28.42px;
+}
+
+[data-target="__name"]+div {
+    color: #9E9E9E;
+    font-size: 12px;
+}
+
+.ju_chungnhan [data-target="__star"] {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    transform: translatey(-30px);
+}
+
+@media (max-width: 549px) {
+    .jp_googlesheet_search>.uk-margin>div {
+        width: 50%;
+    }
+
+    .jp_googlesheet_search>.uk-margin {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .jp_googlesheet_api .uk-pagination {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap !important;
+        width: 100%;
+    }
+}
+
+.jp_googlesheet_api li {
+    margin-left: 0 !important;
+}
+
+.uk-table td {
+    padding: 5px;
+}
+
+.jp_googlesheet_api * {
+    font-size: 14px !important;
+}
+
+.jp_googlesheet_api_modal .ju_chungnhan .__img {
+    background-size: contain;
+}
+
+.jp_googlesheet_api .uk-pagination>li {
+    padding: 0 !important;
+    margin-right: 3px;
+}
+
+
+.ju_time {
+    text-align: left !important;
+    padding-left: 75px !important;
+}
+
+td[data-target] {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.lenid-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.lenid-box {
+    /* border-radius: 100px; */
+    /* border: 1px solid #DEF5FD; */
+    background: #ECEDF4;
+    /* box-shadow: 2px 2px 4px 0px rgba(206, 216, 236, 0.70), -2px -2px 4px 0px rgba(255, 255, 255, 0.70); */
+    padding: 2px 20px;
+    color: #000;
+    font-size: 14px;
+background: transparent;}
+
+.lenid-copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 1px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.lenid-copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.lenid-toast {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+}
+
+/* Style riêng cho tiêu đề "GIẤY CHỨNG NHẬN" trong tab Certificate */
+#jp_googlesheet_api-modal .content_nav2 > .uk-h3.uk-margin-remove{
+  font-family: 'Segoe UI', 'Roboto', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #2d2d2d !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 20px !important;
+}
+
+
+.header-top {
+	    background-image: linear-gradient(to right top, #72550c, #967515, #b79514, #c2a110, #d7cb94)
+}
+.lencontainer {
+    width: 80%; /* Đặt chiều rộng của container tùy ý */
+    margin: 0 auto; /* Căn giữa theo chiều ngang */
+	font-family: "Times New Roman", Times, serif;
+}
+.container95 {
+	width: 99%; /* Đặt chiều rộng của container tùy ý */
+    margin: 0 auto; /* Căn giữa theo chiều ngang */
+}
+	
+.nav-dropdown {
+	min-width: 1080px !important;
+}
+
+/*-- chia cột Form --*/
+#info-left {
+    width: 49%;
+    float: left;
+    margin-right:2%;
+}
+#info-right {
+    width: 49%;
+    float: right;
+}
+.form-contact-twocol:after {
+    content:"\0020";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+.form-contact-twocol {
+    display:block;
+}
+/*-- Chèn icons lên Form --*/
+.wpcf7 p{ position: relative; }
+#icon-form{
+  position: absolute;
+  color: #666666;
+  z-index: 100;
+  font-size: 18px;
+  top: 8px;
+  right: 10px;
+}
+.chung-nhan-ban-cung {
+	background-image: linear-gradient(to right top, #8c8f94, #c3c4c7, #ddd, #dcdcde, #d7cb94);
+	padding: 25px;
+	border: 1px solid #bfbfa0;
+    border-radius: 10px;
+}
+
+
+
+/* ========== BESTMARATHON ACHIEVEMENTS - CLEAN REFACTORED VERSION ========== */
+/* Complete CSS reset and isolation */
+.bm-achievements,
+.bm-achievements * {
+    all: unset;
+    box-sizing: border-box;
+}
+
+/* Container */
+.bm-achievements {
+    display: block;
+    width: 100%;
+    max-width: 630px;
+    padding: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+}
+
+/* Grid Wrapper */
+.bm-ach-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+/* Card */
+.bm-ach-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(90deg, #f9eadc 0%, #f7dfdb 50%, #f9eadc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.bm-ach-card.bm-pending {
+    opacity: 0.6;
+}
+
+/* Card without valid data - reduce opacity */
+.bm-ach-card.bm-no-data {
+    opacity: 0.3;
+}
+
+/* Card Header */
+.bm-ach-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+/* Icon Circle */
+.bm-ach-ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 400;
+    color: #334155;
+    flex-shrink: 0;
+}
+
+.bm-ach-ico.bm-sm {
+    font-size: 10px;
+}
+
+/* Info Wrapper */
+.bm-ach-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.bm-ach-info strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1e293b;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.bm-ach-info small {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #64748b;
+    text-align: left;
+}
+
+.bm-ach-info small.bm-amber {
+    color: #d97706;
+}
+
+/* Card Footer */
+.bm-ach-bot {
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.bm-ach-bot em {
+    display: block;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 400;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+/* Data Row */
+.bm-ach-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Badges */
+.bm-badge-amber,
+.bm-badge-gray {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 400;
+}
+
+.bm-badge-amber {
+    background: #fef3c7;
+}
+
+.bm-badge-amber span {
+    color: #b45309;
+}
+
+.bm-badge-gray {
+    background: #f1f5f9;
+}
+
+.bm-badge-gray span {
+    color: #64748b;
+}
+
+/* Rank Badge */
+.bm-rank {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #f59e0b;
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* Time Display */
+.bm-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ea580c;
+}
+
+.bm-clock-icon {
+    font-size: 13px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* Status Text */
+.bm-status {
+    display: block;
+    font-size: 9px;
+    font-style: italic;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 640px) {
+    .bm-ach-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .bm-ach-card {
+        padding: 10px;
+    }
+
+    .bm-ach-ico {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .bm-ach-info strong {
+        font-size: 11px;
+    }
+
+    .bm-ach-info small {
+        font-size: 10px;
+    }
+
+    .bm-ach-bot em {
+        font-size: 9px;
+    }
+
+    .bm-time {
+        font-size: 13px;
+    }
+
+    .bm-rank {
+        font-size: 10px;
+    }
+
+    /* Hide cards without valid data on mobile */
+    .bm-ach-card.bm-no-data {
+        display: none;
+    }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 420px) {
+    .bm-achievements {
+        padding: 8px 4px;
+    }
+
+    .bm-ach-wrapper {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .bm-ach-card {
+        padding: 12px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .bm-ach-top {
+        margin-bottom: 0;
+        flex: 1;
+    }
+
+    .bm-ach-ico {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .bm-ach-info strong {
+        font-size: 13px;
+    }
+
+    .bm-ach-info small {
+        font-size: 11px;
+    }
+
+    .bm-ach-bot {
+        padding-top: 0;
+        border-top: none;
+        border-left: 1px solid #e2e8f0;
+        padding-left: 12px;
+        min-width: 90px;
+        align-items: flex-end;
+    }
+
+    .bm-ach-bot em {
+        font-size: 10px;
+    }
+
+    .bm-time {
+        font-size: 15px;
+    }
+
+    .bm-rank {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .bm-ach-data {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+    }
+}
+
+/* ================== VIP BADGE STYLES ================== */
+
+/* VIP Badge on Profile Card - positioned on bottom border */
+.jp-profile-card {
+    position: relative;
+    overflow: visible;
+}
+
+.jp-vip-card-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80px;
+    height: auto;
+    z-index: 10;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+    animation: jp-vip-pulse 2s ease-in-out infinite;
+}
+
+/* VIP Badge on Certificate */
+.ju_chungnhan {
+    position: relative;
+}
+
+.jp-vip-cert-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 70px;
+    height: auto;
+    z-index: 20;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* VIP Badge Animation */
+@keyframes jp-vip-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+    .jp-vip-card-badge {
+        width: 60px;
+    }
+
+    .jp-vip-cert-badge {
+        width: 50px;
+        top: 5px;
+        left: 5px;
+    }
+}

@@ -1,0 +1,83 @@
+/*jp_googlesheet_api ----------------------------------------------------------*/
+@font-face {
+    font-family: 'Montserrat';
+    src: url('fonts/Montserrat-Light.woff2') format('woff2'),
+        url('fonts/Montserrat-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.jp_googlesheet_ap, 
+.jp_googlesheet_api .uk-pagination>*>*{
+    /* max-height: 100vh; */
+    /* overflow: auto; */
+    font-size: 14px;
+    font-family: 'Montserrat' !important;
+    color:#000;
+}
+.jp_googlesheet_api .uk-button
+{
+    font-family: 'Montserrat' !important;
+    font-weight: 700;
+}
+.jp_googlesheet_api tr{
+    cursor: pointer;
+}
+
+.jp_googlesheet_api .__divflex {
+    display: flex;
+    gap: 10px;
+    align-items: top;
+}
+
+.jp_googlesheet_api .__divflex .__divimg {
+    background-color: #ededed;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+.uk-button-secondary
+{   
+    font-family: 'Montserrat' !important;
+
+}
+.uk-table-small .uk-text-right
+{
+    text-align: left !important;
+    vertical-align: top;
+}
+@media (max-width: 639px) {
+    .jp_googlesheet_api .jp_googlesheet_search {
+        position: static !important;
+    }
+}
+
+
+
+
+
+/*jp_googlesheet_api_modal ----------------------------------------------------------*/
+.jp_googlesheet_api_modal .__img{
+    background-color: #ededed;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jp_googlesheet_api_modal .jp_ggs_modal_nav_item{
+    cursor: pointer;
+}
+
+
+
+
+
+
+/*CF& --------------------------------------------------*/
+.jp_ggs_modal_content progress,
+.jp_googlesheet_api_modal .wpcf7 .wpcf7-form-control{
+    width: 100%;
+}

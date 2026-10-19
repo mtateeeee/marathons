@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "ma": "TR70",
+      "ten": "Ultra 70",
+      "total": 424
+    },
+    {
+      "ma": "TR100",
+      "ten": "Ultra 100",
+      "total": 901
+    },
+    {
+      "ma": "TR160",
+      "ten": "Ultra 160",
+      "total": 315
+    },
+    {
+      "ma": "TR250",
+      "ten": "Ultra 250",
+      "total": 10
+    }
+  ],
+  "event": "ULTRA_TRAIL"
+}
