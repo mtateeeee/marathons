@@ -1,0 +1,667 @@
+/* ==========================================================================
+   VBM TIMING BOARD — lớp giao diện cuối cùng (nạp SAU editorial-theme.css)
+   Ý tưởng: bảng kết quả bấm giờ kỹ thuật (UTMB / World Athletics)
+   - Nền gần-đen, kẻ ô 1px, KHÔNG bo tròn, KHÔNG đổ bóng, KHÔNG gradient
+   - Số liệu: IBM Plex Mono (tabular). Tiêu đề: Barlow Condensed. Chữ: IBM Plex Sans
+   - Một màu nhấn duy nhất: amber tín hiệu (#FFB020). Xanh lá chỉ dành cho LIVE.
+   ========================================================================== */
+
+:root {
+    --tb-bg: #f3f2ed;
+    --tb-panel: #ffffff;
+    --tb-panel-2: #f8f7f3;
+    --tb-line: #e3e1d9;
+    --tb-line-strong: #c9c6bb;
+    --tb-text: #171b1f;
+    --tb-text-2: #4a545c;
+    --tb-text-3: #6a747c;
+    --tb-ink: #171b1f;
+    --tb-amber: #ffb020;
+    --tb-amber-text: #a35c00;
+    --tb-amber-dim: #d9a441;
+    --tb-live: #0e9f57;
+    --tb-font-display: 'Barlow Condensed', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+    --tb-font-body: 'IBM Plex Sans', 'Be Vietnam Pro', system-ui, sans-serif;
+    --tb-font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+
+    /* Trỏ lại biến cũ để mọi chỗ còn dùng "đất nung" tự chuyển sang amber */
+    --vbm-clay: #ffb020;
+    --vbm-clay-hover: #e89b0c;
+    --vbm-clay-light: #fff6e0;
+    --vbm-clay-border: #f1d79a;
+    --vbm-bronze: #b8860b;
+    --vbm-gold: #ffb020;
+    --vbm-paper: #f3f2ed;
+}
+
+/* ---------- Nền & chữ ---------- */
+html body {
+    font-family: var(--tb-font-body);
+}
+html body .vbm-homepage {
+    background-color: var(--tb-bg) !important;
+    font-family: var(--tb-font-body);
+    color: var(--tb-text);
+}
+html body .font-roboto-condensed {
+    font-family: var(--tb-font-display) !important;
+}
+html body [style*="monospace"] {
+    font-family: var(--tb-font-mono) !important;
+}
+.jp-mark-time, .jp-rank, #header-stats span, .jp-page-btn, .jp-page-input {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Phẳng hoá: bỏ bo góc, bóng đổ ---------- */
+html body .vbm-homepage [class*="rounded"],
+html body #jp-leaderboard-new [class*="rounded"],
+html body #jp-leaderboard-new > .bg-white,
+html body #jp-leaderboard-new .jp-leaderboard-row,
+html body .vbm-homepage button,
+html body .vbm-homepage input,
+html body .vbm-homepage .jp-badge,
+html body #jp-leaderboard-new > .bg-white.shadow-xl.rounded-2xl,
+html body .vbm-homepage .bg-white.rounded-\[24px\],
+html body .vbm-homepage .jp-nhom-bar,
+html body .vbm-homepage .jp-nhom-btn,
+html body .vbm-homepage .jp-live-bar,
+html body .vbm-homepage .jp-live-badge {
+    border-radius: 0 !important;
+}
+html body .vbm-homepage [class*="shadow"],
+html body .vbm-homepage .jp-badge {
+    box-shadow: none !important;
+}
+
+/* ---------- Header (giữ nền sáng như tờ báo kết quả, kẻ đen) ---------- */
+html body .vgmhd-header {
+    box-shadow: none !important;
+    border-bottom: 2px solid #0b0d0f !important;
+}
+html body .vgmhd-logo-d > div,
+html body .vgmhd-logo-m > div,
+html body #vgmhdDrawer > div:first-child > div:first-child,
+html body .vbm-footer-logo-wrapper {
+    background: #ffffff !important;
+    border: 1px solid #0b0d0f !important;
+    border-bottom: 3px solid var(--tb-amber) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+html body .vgmhd-acct,
+html body .vgmhd-acct-m,
+html body #vgmhdLogin {
+    background: #0b0d0f !important;
+    border: 1px solid #0b0d0f !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--tb-font-mono);
+    letter-spacing: 0.04em;
+}
+html body .vgmhd-acct:hover {
+    background: var(--tb-amber) !important;
+    border-color: var(--tb-amber) !important;
+    color: #0b0d0f !important;
+    transform: none;
+    box-shadow: none !important;
+}
+html body .vgmhd-acct:hover * { color: #0b0d0f !important; stroke: #0b0d0f !important; }
+html body .vgmhd-feat {
+    background: #0b0d0f !important;
+    border: 1px solid #0b0d0f !important;
+    border-radius: 0 !important;
+}
+html body .vgmhd-feat > div:last-child > div:nth-child(1) { color: var(--tb-amber) !important; }
+
+/* ---------- HERO ---------- */
+html body .vbm-hero-fullwidth {
+    background:
+        linear-gradient(var(--tb-line) 1px, transparent 1px) 0 0 / 100% 48px,
+        linear-gradient(90deg, var(--tb-line) 1px, transparent 1px) 0 0 / 48px 100%,
+        var(--tb-bg) !important;
+    border-bottom: 1px solid var(--tb-line-strong) !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+}
+html body .vbm-hero-fullwidth > .absolute.inset-0 { display: none; }  /* chấm bi cũ */
+
+/* Logo: bỏ vầng sáng vàng */
+html body .vbm-hero-fullwidth [class*="drop-shadow"] { filter: none !important; }
+html body .vbm-hero-fullwidth img { max-width: 112px !important; max-height: 112px !important; }
+
+/* Tiêu đề: bỏ chữ gradient, dùng 1 màu amber phẳng */
+html body .vbm-hero-fullwidth .bg-clip-text {
+    background: none !important;
+    -webkit-text-fill-color: var(--tb-amber) !important;
+    color: var(--tb-amber) !important;
+    font-family: var(--tb-font-mono) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.28em !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+html body .vbm-hero-fullwidth .bg-clip-text::before {
+    content: '▍';
+    margin-right: 0.5em;
+}
+html body .vbm-hero-fullwidth span.font-black {
+    font-family: var(--tb-font-display) !important;
+    font-weight: 700 !important;
+    font-size: clamp(44px, 5.2vw, 76px) !important;
+    letter-spacing: 0.005em !important;
+    text-transform: uppercase;
+    line-height: 0.92;
+}
+html body .vbm-hero-fullwidth span.font-light {
+    font-family: var(--tb-font-display) !important;
+    font-weight: 400 !important;
+    font-size: clamp(26px, 3vw, 44px) !important;
+    color: var(--tb-text-2) !important;
+}
+html body .vbm-hero-fullwidth p {
+    color: var(--tb-text-2) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    max-width: 52ch;
+}
+html body .vbm-hero-fullwidth .border-l-2 {
+    border-left: 1px solid var(--tb-line-strong) !important;
+    padding-left: 1rem !important;
+}
+
+/* KPI: một dải ô kẻ liền, 4 cột × 2 hàng */
+html body #header-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    border-top: 1px solid var(--tb-line-strong);
+    border-left: 1px solid var(--tb-line-strong);
+}
+html body #header-stats > div {
+    background: var(--tb-panel) !important;
+    border: 0 !important;
+    border-right: 1px solid var(--tb-line-strong) !important;
+    border-bottom: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    backdrop-filter: none !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    padding: 10px 12px !important;
+    min-height: 78px !important;
+    transform: none !important;
+    transition: background-color 0.12s !important;
+}
+html body #header-stats > div:hover {
+    background: var(--tb-panel-2) !important;
+    box-shadow: inset 0 -2px 0 var(--tb-amber) !important;
+}
+html body #header-stats > div > span:first-child {
+    font-family: var(--tb-font-mono) !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.14em !important;
+    color: var(--tb-text-3) !important;
+}
+html body #header-stats > div > span:nth-child(2) {
+    font-family: var(--tb-font-mono) !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--tb-text) !important;
+    line-height: 1;
+}
+html body #header-stats .absolute {
+    background: var(--tb-amber) !important;
+    color: #0b0d0f !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--tb-font-body);
+    text-align: left !important;
+}
+html body #header-stats .absolute::after { border-top-color: var(--tb-amber) !important; }
+
+/* ---------- Thanh tab + tìm kiếm ---------- */
+html body #jp-leaderboard-new .bg-\[\#E5E5E5\] {
+    background: var(--tb-panel) !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+html body .jp-tab-button {
+    border: 0 !important;
+    border-right: 1px solid var(--tb-line) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    clip-path: none !important;
+}
+html body .jp-tab-button span {
+    font-family: var(--tb-font-mono) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    color: var(--tb-text-2) !important;
+}
+html body .jp-tab-button:hover span { color: var(--tb-text) !important; }
+html body .jp-tab-button.active {
+    background: var(--tb-amber) !important;
+    border-bottom: 0 !important;
+}
+html body .jp-tab-button.active span { color: #0b0d0f !important; font-weight: 700 !important; }
+html body .jp-tab-button.active::after,
+html body .jp-tab-button::before { display: none !important; }
+
+html body #jp-search-input {
+    background: var(--tb-bg) !important;
+    border: 0 !important;
+    border-left: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    color: var(--tb-text) !important;
+    font-family: var(--tb-font-mono) !important;
+    font-size: 12px !important;
+    letter-spacing: 0.06em;
+    box-shadow: none !important;
+}
+html body #jp-search-input::placeholder { color: var(--tb-text-3) !important; }
+html body #jp-search-input:focus { outline: 1px solid var(--tb-amber) !important; outline-offset: -1px; }
+html body #jp-refresh-btn {
+    background: var(--tb-bg) !important;
+    border: 0 !important;
+    border-left: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    color: var(--tb-text-2) !important;
+    box-shadow: none !important;
+}
+html body #jp-refresh-btn:hover { color: var(--tb-amber) !important; }
+
+/* ---------- LIVE strip + lọc nhóm ---------- */
+html body .jp-live-bar {
+    background: var(--tb-panel) !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-left: 3px solid var(--tb-live) !important;
+    border-radius: 0 !important;
+    color: var(--tb-text-2);
+}
+html body .jp-live-badge {
+    background: transparent !important;
+    color: var(--tb-live) !important;
+    border: 1px solid var(--tb-live) !important;
+    font-family: var(--tb-font-mono);
+    font-size: 10px !important;
+    letter-spacing: 0.16em !important;
+}
+html body .jp-live-dot { background: var(--tb-live) !important; }
+html body .jp-live-wave, html body .jp-live-title { color: var(--tb-live) !important; }
+html body .jp-live-bar, html body .jp-live-bar * { font-family: var(--tb-font-mono); font-size: 11px; }
+html body .jp-live-bar [class*="text-"], html body .jp-live-bar b, html body .jp-live-bar strong { color: var(--tb-text) !important; }
+html body .jp-live-sep { background: var(--tb-line-strong) !important; }
+html body .jp-live-all { background: transparent !important; color: var(--tb-amber) !important; border: 1px solid var(--tb-line-strong) !important; border-radius: 0 !important; }
+
+html body .jp-nhom-bar {
+    background: var(--tb-panel) !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+}
+html body .jp-nhom-label { font-family: var(--tb-font-mono); color: var(--tb-text-3) !important; letter-spacing: 0.14em !important; }
+html body .jp-nhom-btn {
+    background: transparent !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    color: var(--tb-text-2) !important;
+    font-family: var(--tb-font-mono);
+    font-size: 12px !important;
+}
+html body .jp-nhom-btn:hover { color: var(--tb-text) !important; border-color: var(--tb-text-3) !important; }
+html body .jp-nhom-btn.active, html body .jp-nhom-btn[aria-pressed="true"] {
+    background: var(--tb-amber) !important;
+    border-color: var(--tb-amber) !important;
+    color: #0b0d0f !important;
+}
+
+/* ---------- BẢNG XẾP HẠNG ---------- */
+html body #jp-leaderboard-new > .bg-white.shadow-xl,
+html body #jp-leaderboard-new .w-full.bg-white {
+    background: var(--tb-panel) !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+html body #jp-table-header {
+    background: var(--tb-bg) !important;
+    color: var(--tb-text-3) !important;
+    border-bottom: 2px solid var(--tb-amber) !important;
+    font-family: var(--tb-font-mono) !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.16em !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+html body #jp-table-body { border: 0; }
+html body #jp-table-body.divide-y > * + *,
+html body #jp-table-body > * + * { border-top: 1px solid var(--tb-line) !important; }
+
+html body .jp-leaderboard-row {
+    background: transparent !important;
+    min-height: 56px;
+    position: relative;
+    transition: background-color 0.1s;
+}
+html body .jp-leaderboard-row:hover {
+    background: var(--tb-panel-2) !important;
+    box-shadow: inset 2px 0 0 var(--tb-amber);
+}
+html body .jp-leaderboard-row:active { background: #1a1f24 !important; }
+
+/* Hạng */
+html body .jp-rank {
+    display: block;
+    text-align: center;
+    font-family: var(--tb-font-mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--tb-text-3);
+    letter-spacing: 0.02em;
+}
+html body .jp-rank--podium { font-weight: 700; font-size: 16px; color: var(--tb-text); }
+html body .jp-rank--1 { color: var(--tb-amber); }
+html body .jp-leaderboard-row:has(.jp-rank--podium) { box-shadow: inset 2px 0 0 var(--tb-line-strong); }
+html body .jp-leaderboard-row:has(.jp-rank--1) { box-shadow: inset 2px 0 0 var(--tb-amber); }
+
+/* Tên VĐV */
+html body .jp-leaderboard-row h3 {
+    font-family: var(--tb-font-display) !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    color: var(--tb-text) !important;
+    line-height: 1.1;
+}
+html body .jp-leaderboard-row h3 a { color: inherit !important; }
+
+/* Ảnh: vuông, xám — hover mới ra màu */
+html body .jp-leaderboard-row .jp-avatar-img,
+html body .jp-leaderboard-row .jp-avatar-link {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 0 !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    box-shadow: none !important;
+}
+html body .jp-leaderboard-row .jp-avatar-img img {
+    filter: grayscale(1) contrast(1.05);
+    transition: filter 0.15s;
+}
+html body .jp-leaderboard-row:hover .jp-avatar-img img { filter: none; }
+
+/* Sao: nhỏ, amber */
+html body .jp-star { width: 8px; height: 8px; fill: var(--tb-amber) !important; color: var(--tb-amber) !important; }
+html body .jp-stars { margin-bottom: 3px; }
+
+/* Thành tích — số lớn, amber */
+html body .jp-mark-time {
+    font-family: var(--tb-font-mono) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em;
+    color: var(--tb-amber) !important;
+}
+html body .jp-mark-race { color: var(--tb-text-3) !important; font-family: var(--tb-font-mono); }
+html body .jp-tri-splits { color: var(--tb-text-2) !important; }
+
+/* Các cột phụ */
+html body .jp-leaderboard-row > div[style*="text-align: center"] {
+    color: var(--tb-text-2) !important;
+    font-family: var(--tb-font-mono) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+}
+html body .jp-leaderboard-row > div[style*="text-transform: uppercase"] {
+    color: var(--tb-text-3) !important;
+    font-size: 11px !important;
+    letter-spacing: 0.03em;
+}
+html body .jp-leaderboard-row > div[style*="color: rgb(180, 83, 9)"] { color: var(--tb-amber) !important; }
+
+html body .jp-club-container,
+html body .jp-club-container > *:first-child,
+html body .jp-club-container > *:first-child a {
+    color: var(--tb-text-2) !important;
+    font-size: 12px !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+html body .jp-club-container > *:not(:first-child),
+html body .jp-club-container > *:not(:first-child) a { color: var(--tb-text-3) !important; font-size: 10px !important; }
+
+/* Huy hiệu: khung viền, không tô màu cầu vồng */
+html body .jp-badge,
+html body .jp-badge[class*="badge-"] {
+    background: transparent !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    color: var(--tb-text-2) !important;
+    font-family: var(--tb-font-mono) !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    padding: 1px 5px !important;
+    filter: none !important;
+    transform: none !important;
+}
+html body .jp-badge.badge-yellow,
+html body .jp-badge.badge-orange {
+    border-color: var(--tb-amber-dim) !important;
+    color: var(--tb-amber) !important;
+}
+html body .jp-badge.badge-yellow::after { display: none !important; }
+html body .jp-badge svg { color: inherit; }
+html body .jp-leaderboard-row .jp-badge[data-tooltip]::before {
+    background: var(--tb-amber) !important;
+    color: #0b0d0f !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--tb-font-mono);
+}
+html body .jp-leaderboard-row .jp-badge[data-tooltip-arrow="true"]::after { border-top-color: var(--tb-amber) !important; }
+
+/* Chờ xác minh */
+html body .jp-cxm-nut { border-radius: 0 !important; }
+
+/* ---------- Phân trang ---------- */
+html body .jp-page-btn,
+html body .jp-page-nav {
+    background: var(--tb-panel) !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    color: var(--tb-text-2) !important;
+    font-family: var(--tb-font-mono) !important;
+    font-weight: 500 !important;
+    box-shadow: none !important;
+}
+html body .jp-page-btn:hover:not(.active),
+html body .jp-page-nav:hover:not(:disabled) {
+    background: var(--tb-panel-2) !important;
+    border-color: var(--tb-amber) !important;
+    color: var(--tb-amber) !important;
+}
+html body .jp-page-btn.active {
+    background: var(--tb-amber) !important;
+    border-color: var(--tb-amber) !important;
+    color: #0b0d0f !important;
+    font-weight: 700 !important;
+}
+html body .jp-page-input {
+    background: var(--tb-bg) !important;
+    color: var(--tb-text) !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    border-radius: 0 !important;
+    font-family: var(--tb-font-mono);
+}
+html body .jp-page-jump { color: var(--tb-text-3) !important; font-family: var(--tb-font-mono); }
+
+/* ---------- Khối thông tin bên dưới (About / FAQ / Nhà tài trợ) ---------- */
+html body .vbm-homepage .bg-white.rounded-\[24px\] {
+    border-radius: 0 !important;
+    border: 1px solid var(--tb-line-strong) !important;
+    box-shadow: none !important;
+}
+html body .vbm-homepage section > .absolute.top-0 { background: var(--tb-amber) !important; height: 3px !important; }
+html body .vbm-homepage .section-title,
+html body .vbm-homepage h2 {
+    font-family: var(--tb-font-display) !important;
+    letter-spacing: 0.02em !important;
+}
+html body .vbm-homepage #faq-container > .group {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+html body .vbm-sponsor-card,
+html body .vbm-partner-card {
+    background: #ffffff !important;
+    border: 1px solid #d4d8db !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+html body .vbm-sponsor-card:hover,
+html body .vbm-partner-card:hover {
+    border-color: #0b0d0f !important;
+    transform: none !important;
+    box-shadow: inset 0 -3px 0 var(--tb-amber) !important;
+}
+html body .vbm-sponsor-crown svg { color: #0b0d0f !important; }
+
+/* ---------- Footer ---------- */
+html body .vbm-footer { border-top: 3px solid var(--tb-amber) !important; }
+
+/* ---------- Modal / VIP ---------- */
+html body #jp_googlesheet_api-modal .jp-vip-locked,
+html body #jp_googlesheet_api-modal .jp-vip-feature { border-radius: 0 !important; }
+html body #jp_googlesheet_api-modal .jp-vip-crown-circle {
+    background: #0b0d0f !important;
+    color: var(--tb-amber) !important;
+    border: 2px solid var(--tb-amber) !important;
+    border-radius: 0 !important;
+}
+html body #jp_googlesheet_api-modal .jp-vip-title span {
+    color: #0b0d0f !important;
+    -webkit-text-fill-color: #0b0d0f !important;
+    box-shadow: inset 0 -6px 0 var(--tb-amber);
+}
+html body #jp_googlesheet_api-modal .jp-vip-feature-icon {
+    background: #0b0d0f !important;
+    color: var(--tb-amber) !important;
+    border-radius: 0 !important;
+}
+html body #jp_googlesheet_api-modal .jp-vip-feature:hover { border-color: #0b0d0f !important; }
+html body #jp_googlesheet_api-modal .jp-vip-cta-btn {
+    background: var(--tb-amber) !important;
+    color: #0b0d0f !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--tb-font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+html body #jp_googlesheet_api-modal .jp-vip-cta-btn:hover { background: #e89b0c !important; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+    html body #header-stats { grid-template-columns: repeat(2, 1fr) !important; }
+    html body #header-stats > div > span:nth-child(2) { font-size: 22px !important; }
+    html body .jp-mark-time { font-size: 15px !important; }
+    html body .jp-leaderboard-row h3 { font-size: 15px !important; }
+    html body .jp-leaderboard-row .jp-avatar-img,
+    html body .jp-leaderboard-row .jp-avatar-link { width: 36px !important; height: 36px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html body * { transition: none !important; animation: none !important; }
+}
+
+/* ==========================================================================
+   LIGHT THEME OVERRIDES — nền giấy sáng, mực đen, amber chỉ làm điểm nhấn
+   (đặt cuối file để thắng các quy tắc ở trên)
+   ========================================================================== */
+html body .vbm-homepage { background-color: var(--tb-bg) !important; color: var(--tb-text); }
+
+/* Hero sáng */
+html body .vbm-hero-fullwidth {
+    background:
+        linear-gradient(#e6e4db 1px, transparent 1px) 0 0 / 100% 48px,
+        linear-gradient(90deg, #e6e4db 1px, transparent 1px) 0 0 / 48px 100%,
+        #faf9f5 !important;
+    border-bottom: 1px solid var(--tb-line-strong) !important;
+    color: var(--tb-text) !important;
+}
+html body .vbm-hero-fullwidth span.font-black,
+html body .vbm-hero-fullwidth .text-white { color: var(--tb-text) !important; }
+html body .vbm-hero-fullwidth span.font-light { color: var(--tb-text-2) !important; }
+html body .vbm-hero-fullwidth p { color: var(--tb-text-2) !important; }
+html body .vbm-hero-fullwidth .bg-clip-text {
+    -webkit-text-fill-color: var(--tb-amber-text) !important;
+    color: var(--tb-amber-text) !important;
+}
+html body .vbm-hero-fullwidth .bg-clip-text::before { color: var(--tb-amber); }
+
+/* KPI */
+html body #header-stats { border-color: var(--tb-line-strong); }
+html body #header-stats > div { background: #ffffff !important; border-color: var(--tb-line-strong) !important; }
+html body #header-stats > div:hover { background: #fffaf0 !important; }
+html body #header-stats .absolute { background: var(--tb-ink) !important; color: #ffffff !important; }
+html body #header-stats .absolute::after { border-top-color: var(--tb-ink) !important; }
+
+/* Tab + ô tìm kiếm */
+html body #jp-leaderboard-new .bg-\[\#E5E5E5\] { background: #ffffff !important; }
+html body #jp-search-input,
+html body #jp-refresh-btn { background: #ffffff !important; color: var(--tb-text) !important; }
+html body #jp-refresh-btn:hover { color: var(--tb-amber-text) !important; }
+html body .jp-tab-button:hover { background: var(--tb-panel-2) !important; }
+
+/* LIVE */
+html body .jp-live-bar { background: #ffffff !important; }
+html body .jp-live-bar [class*="text-"], html body .jp-live-bar b, html body .jp-live-bar strong { color: var(--tb-text) !important; }
+html body .jp-live-all { color: var(--tb-amber-text) !important; background: #ffffff !important; }
+
+/* Bảng: tiêu đề cột là dải mực đen cho có điểm tựa thị giác */
+html body #jp-table-header {
+    background: var(--tb-ink) !important;
+    color: #b9c0c6 !important;
+    border-bottom: 2px solid var(--tb-amber) !important;
+}
+html body .jp-leaderboard-row:hover { background: #fffaf0 !important; }
+html body .jp-leaderboard-row:active { background: #fdf0d2 !important; }
+html body .jp-leaderboard-row .jp-avatar-img img { filter: grayscale(1) contrast(1.02); }
+
+/* Chữ nhấn amber → amber đậm để đọc được trên nền trắng */
+html body .jp-mark-time,
+html body .jp-rank--1,
+html body .jp-leaderboard-row > div[style*="color: rgb(180, 83, 9)"] { color: var(--tb-amber-text) !important; }
+html body .jp-star { fill: #e8960a !important; color: #e8960a !important; }
+html body .jp-badge.badge-yellow,
+html body .jp-badge.badge-orange { color: var(--tb-amber-text) !important; border-color: var(--tb-amber-dim) !important; background: #fff8e8 !important; }
+html body .jp-leaderboard-row .jp-badge[data-tooltip]::before { background: var(--tb-ink) !important; color: #ffffff !important; }
+html body .jp-leaderboard-row .jp-badge[data-tooltip-arrow="true"]::after { border-top-color: var(--tb-ink) !important; }
+
+/* Phân trang */
+html body .jp-page-btn, html body .jp-page-nav { background: #ffffff !important; }
+html body .jp-page-btn:hover:not(.active), html body .jp-page-nav:hover:not(:disabled) { color: var(--tb-amber-text) !important; background: #fffaf0 !important; }
+html body .jp-page-input { background: #ffffff !important; }
+html body .jp-nhom-bar { background: #ffffff !important; }
+
+/* Khối thông tin phía dưới: nền kẻ nhẹ trên giấy */
+html body .vbm-homepage .bg-white.rounded-\[24px\] { background: #ffffff !important; }
+/* Logo vàng đặt trên ô mực đen để nổi trên nền sáng */
+html body .vbm-hero-fullwidth img {
+    background: var(--tb-ink);
+    padding: 12px;
+    box-sizing: content-box;
+    max-width: 96px !important;
+    max-height: 96px !important;
+    border-bottom: 3px solid var(--tb-amber);
+}

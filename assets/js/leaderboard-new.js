@@ -1093,10 +1093,11 @@
             }
 
             const html = paged.map((runner, index) => {
-                let rankDisplay = `<span style="font-weight: 400; color: rgb(100, 116, 139); font-size: 14px; display: block; text-align: center;">${runner.rank}</span>`;
-                if (runner.rank <= 3) {
-                    rankDisplay = `<img src="https://bestmarathon.vn/wp-content/plugins/jp-google-sheet-api-5/images/top${runner.rank}.png" style="width: 38px; height: auto; margin: 0 auto; display: block;">`;
-                }
+                // Hạng hiển thị dạng số bấm giờ (mono, đệm 0). Top 3 chỉ khác nhau ở vạch màu
+                // bên trái hàng — style nằm trong assets/css/timing-board.css.
+                const _rankNum = parseInt(runner.rank, 10);
+                const _rankTxt = isNaN(_rankNum) ? String(runner.rank == null ? '' : runner.rank) : String(_rankNum).padStart(2, '0');
+                const rankDisplay = `<span class="jp-rank${_rankNum >= 1 && _rankNum <= 3 ? ' jp-rank--podium jp-rank--' + _rankNum : ''}">${_rankTxt}</span>`;
 
                 const starsHtml = runner.stars ? `<div class="jp-stars">${Array(runner.stars).fill(Icons.StarFill).join('')}</div>` : '';
 
